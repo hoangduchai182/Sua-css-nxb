@@ -1,0 +1,79 @@
+.PostCarousel {
+  position: relative;
+  margin-bottom: 30px;
+
+  @media (max-width: 991px) {
+    margin-bottom: 0;
+  }
+
+  &-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    display: block;
+
+    @media (max-width: 991px) {
+      border-radius: 0;
+    }
+
+    &-image {
+      img {
+        width: 100%;
+      }
+    }
+
+    &-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 16px 30px;
+      background: color(jaguar-alpha-75);
+
+      &-title,
+      &-description {
+        color: color(white);
+        font-size: 14px;
+        max-width: calc(100% - 70px);
+
+        @media (max-width: 991px) {
+          max-width: unset;
+        }
+      }
+
+      &-title {
+        font-weight: 500;
+      }
+
+      &-description {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  .owl-prev,
+  .owl-next {
+    position: absolute;
+    bottom: 16px;
+    right: 30px;
+    width: 28px;
+    height: 28px;
+
+    @media (max-width: 991px) {
+      right: 16px;
+      bottom: calc(100% + 37px);
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .owl-prev {
+    right: calc(30px + 12px + 28px);
+
+    @media (max-width: 991px) {
+      right: calc(16px + 12px + 28px);
+    }
+  }
+}

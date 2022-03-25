@@ -1,0 +1,57 @@
+header.Header
+  .container 
+    .Header-wrapper.flex.items-center.justify-between
+      .Header-wrapper-item.flex.items-center
+        .Header-logo.neu
+          img(src="./assets/images/logo-neu.svg", alt="")
+
+        .Header-logo.nxb
+          img(src="./assets/images/logo-nxb.svg", alt="")
+
+        .Header-logo.neu-mobile
+          img(src="./assets/images/logo-neu-mobile.svg", alt="")
+
+      .Header-wrapper-item.flex.items-center
+        .Header-hotline.flex.items-center 
+          .Header-hotline-item.flex.items-center 
+            .Header-hotline-item-icon 
+              img(src="./assets/icons/icon-phone-red.svg", alt="")
+            .Header-hotline-item-info
+              .Header-hotline-item-info-label Hotline:
+              .Header-hotline-item-info-value 024.37627819
+
+          .Header-hotline-item.flex.items-center 
+            .Header-hotline-item-info
+              .Header-hotline-item-info-label Hotline:
+              .Header-hotline-item-info-value 024.37627819
+
+        .Header-btns.flex.items-center
+          +Button({
+            title: 'Tủ sách của bạn',
+            size: 'small',
+            styleType: 'primary',
+            badge: { label: '1', styleType: 'red' },
+            iconImage: './assets/icons/icon-books-white.svg',
+          })
+
+          +Button({
+            title: 'Tài khoản',
+            size: 'small',
+            styleType: 'outline-primary',
+            badge: { label: '!', styleType: 'yellow' },
+            iconImage: './assets/icons/icon-user-circle-blue.svg'
+          })
+
+      .Header-wrapper-item.mobile.flex.items-center
+        +Button({
+          size: 'middle',
+          styleType: 'outline-primary',
+          iconImage: './assets/icons/icon-user-circle-fill-blue.svg'
+        })
+
+        +Button({
+          className: 'NavigationMobile-open',
+          size: 'middle',
+          styleType: 'outline-primary',
+          iconImage: './assets/icons/icon-bars-blue.svg'
+        })

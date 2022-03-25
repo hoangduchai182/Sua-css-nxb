@@ -1,0 +1,41 @@
+.BookBoxHorizontal {
+  &-image {
+    flex: 0 0 264px;
+    max-width: 264px;
+    height: 264px;
+    margin-right: 16px;
+    display: flex;
+    border: 1px solid color(alto);
+
+    img {
+      margin: auto;
+      max-width: 100%;
+    }
+  }
+
+  &-info {
+    flex: 1;
+    &-description {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 15px;
+      color: color(mine-shaft);
+    }
+
+    &-table {
+      width: 100%;
+      border-collapse: collapse;
+
+      td {
+        border: 1px solid color(alto);
+        padding: 6px 12px;
+        font-size: 13px;
+        color: color(jaguar);
+        vertical-align: middle;
+        &:first-child {
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}

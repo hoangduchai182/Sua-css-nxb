@@ -1,0 +1,24 @@
+extends includes/layouts/Layout.pug
+
+block pages
+  .CategoryPage.layout
+    .container  
+      +Breadcrumb({ data: [
+        { link: '#', title: 'Trang chủ' },
+        { link: '#', title: 'Danh mục sách' },
+      ] })
+      .layout-wrapper.flex 
+        .layout-col.main
+          .CardWithTab.tab-wrapper
+            .CardWithTab-header.flex.items-center
+              .CardWithTab-header-item.tab-item Nguồn tài liệu
+              .CardWithTab-header-item.tab-item Theo Chủ đề
+              .CardWithTab-header-item.tab-item Theo tác giả
+
+            .CardWithTab-body.padding
+              each item in [1,2,3]
+                .tab-main
+                  .CardWithTab-categories.flex.flex-wrap.justify-between
+                    each item in dataCategoriesBook
+                      .CardWithTab-categories-item
+                        +CategoryBlock(item)

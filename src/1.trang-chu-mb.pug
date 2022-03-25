@@ -1,0 +1,193 @@
+extends includes/layouts/Layout.pug
+
+block pages
+  .HomePage.layout
+    .container  
+      .layout-wrapper.flex 
+        .layout-col.main
+          include includes/containers/HomeBanner.pug
+
+          +BookCollection({
+            herotitle: 'Giới thiệu sách',
+            title: 'Chiến Lược Trong Đàm Phán',
+            subtitle: 'Tác giả: Jutta Portner',
+            description: 'Lần gần đây nhất bạn phải đàm phán là khi nào? Có phải đó là khi lên kế hoạch cuối tuần vào sáng hôm nay cùng với người yêu? Có phải đó là khi bạn nói chuyện với cậu con trai tuổi teen về tiện ích công nghệ mới nào đó? Hay là khi nói chuyện với sếp về khoản tăng lương đã quá hạn từ lâu? Bạn phải đàm phán với đồng nghiệp, với khách hàng khó tính, với cả những người thân yêu nhất… - và rõ ràng, càng ngày ta càng phải thương lượng nhiều hơn. Đàm phán, từ lúc nào không rõ, đã trở thành một phần cuộc sống hàng',
+            image: './assets/images/image-book-collection-1.png'
+          })
+
+          .CardWithTab.tab-wrapper
+            .CardWithTab-header.flex.items-center
+              .CardWithTab-header-item.tab-item Sách mới nhất
+              .CardWithTab-header-item.tab-item Sách xem nhiều
+              .CardWithTab-header-item.tab-item Sách đọc nhiều
+
+            .CardWithTab-body.padding
+              .tab-main 
+                +CardBookView({ image: './assets/images/image-card-book-view.png', title: 'Chiến lược trong đàm phán', description: '3238 lượt xem' })
+                +CardBookView({ image: './assets/images/image-card-book-view.png', title: 'Giáo Trình Phân Tích Kinh Doanh', description: '3238 lượt xem' })
+                +CardBookView({ image: './assets/images/image-card-book-view.png', title: 'Giáo trình Lý thuyết xác suất và thống kê', description: '3238 lượt xem' })
+                +CardBookView({ image: './assets/images/image-card-book-view.png', title: 'Chiến lược barbell trong quản trị danh', description: '3238 lượt xem' })
+                +CardBookView({ image: './assets/images/image-card-book-view.png', title: 'Chất lượng dịch vụ ngân hàng điện tử', description: '3238 lượt xem' })
+
+              .tab-main 
+                +CardBookView({ image: './assets/images/image-card-book-view.png', title: 'Chiến lược trong đàm phán', description: '3238 lượt xem', rating: '01' })
+                +CardBookView({ image: './assets/images/image-card-book-view.png', title: 'Giáo Trình Phân Tích Kinh Doanh', description: '3238 lượt xem', rating: '02' })
+                +CardBookView({ image: './assets/images/image-card-book-view.png', title: 'Giáo trình Lý thuyết xác suất và thống kê', description: '3238 lượt xem', rating: '03' })
+                +CardBookView({ image: './assets/images/image-card-book-view.png', title: 'Chiến lược barbell trong quản trị danh', description: '3238 lượt xem', rating: '04' })
+                +CardBookView({ image: './assets/images/image-card-book-view.png', title: 'Chất lượng dịch vụ ngân hàng điện tử', description: '3238 lượt xem', rating: '05' })
+
+              .tab-main 
+                +CardBookView({ image: './assets/images/image-card-book-view.png', title: 'Chiến lược trong đàm phán', description: '3238 lượt xem', rating: '01' })
+                +CardBookView({ image: './assets/images/image-card-book-view.png', title: 'Giáo Trình Phân Tích Kinh Doanh', description: '3238 lượt xem', rating: '02' })
+                +CardBookView({ image: './assets/images/image-card-book-view.png', title: 'Giáo trình Lý thuyết xác suất và thống kê', description: '3238 lượt xem', rating: '03' })
+                +CardBookView({ image: './assets/images/image-card-book-view.png', title: 'Chiến lược barbell trong quản trị danh', description: '3238 lượt xem', rating: '04' })
+                +CardBookView({ image: './assets/images/image-card-book-view.png', title: 'Chất lượng dịch vụ ngân hàng điện tử', description: '3238 lượt xem', rating: '05' })
+
+          .CardWithTitle
+            .CardWithTitle-header.flex.items-center.justify-between
+              .CardWithTitle-header-title SÁCH KHUYÊN ĐỌC
+              .CardWithTitle-header-owl-arrow.flex.items-center 
+                .CardWithTitle-header-owl-arrow-btn.owl-arrow-left
+                  <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd" d="M9.3248 1.17496C8.86918 0.719349 8.13049 0.719349 7.67488 1.17496L0.674879 8.17496C0.219267 8.63057 0.219267 9.36927 0.674879 9.82488L7.67488 16.8249C8.13049 17.2805 8.86918 17.2805 9.3248 16.8249C9.78041 16.3693 9.78041 15.6306 9.3248 15.175L3.14975 8.99992L9.3248 2.82488C9.78041 2.36927 9.78041 1.63057 9.3248 1.17496Z" fill="#E0E0E0"/></svg>
+                .CardWithTitle-header-owl-arrow-btn.owl-arrow-right
+                  <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd" d="M0.675205 1.17496C1.13082 0.719349 1.86951 0.719349 2.32512 1.17496L9.32512 8.17496C9.78073 8.63057 9.78073 9.36927 9.32512 9.82488L2.32512 16.8249C1.86951 17.2805 1.13082 17.2805 0.675205 16.8249C0.219593 16.3693 0.219593 15.6306 0.675205 15.175L6.85025 8.99992L0.675205 2.82488C0.219593 2.36927 0.219593 1.63057 0.675205 1.17496Z" fill="#E0E0E0"/></svg>
+
+            .CardWithTitle-body
+              .owl-carousel.CardWithTitle-carousel
+                each item in dataBooksList
+                  .item 
+                    .CardWithTitle-carousel-item 
+                      +BookBlock(item)
+
+
+          .CardWithTitle
+            .CardWithTitle-header.flex.items-center.justify-between
+              .CardWithTitle-header-title SÁCH HAY
+
+              .CardWithTitle-header-see-all.flex.items-center 
+                |Xem tất cả 
+                <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.8376 3.62599C5.06541 3.39819 5.43475 3.39819 5.66256 3.62599L9.16256 7.12599C9.39037 7.3538 9.39037 7.72315 9.16256 7.95095L5.66256 11.451C5.43475 11.6788 5.06541 11.6788 4.8376 11.451C4.6098 11.2231 4.6098 10.8538 4.8376 10.626L7.92512 7.53847L4.8376 4.45095C4.6098 4.22315 4.6098 3.8538 4.8376 3.62599Z" fill="#B9B9B9"/></svg>
+
+            .CardWithTitle-body
+              .CardWithTitle-books-list.flex.flex-wrap
+                each item in dataBooksList
+                  .CardWithTitle-books-list-item
+                    +BookBlock(item)
+    
+          +BookCollection({
+            herotitle: 'Bộ sưu tập sách',
+            title: 'Chiến Lược Trong Đàm Phán',
+            subtitle: 'Bộ combo gồm 2 cuốn sách:\nLàm Giàu Từ Chứng Khoán – William J. O’Neil\nĐầu Tư Tài Chính – Investments – Bodie, Kane, Marcus',
+            description: 'Bộ sách làm giàu từ chứng khoán bằng đầu tư tài chính gồm 2 cuốn sách: Làm Giàu Từ Chứng Khoán – William J. O’Neil và Đầu Tư Tài Chính – Investments – Bodie, Kane, Marcus. Cuốn sách Làm Giàu Từ Chứng Khoán sẽ giúp bạn học được phương pháp đầu tư CAN SLIM của O’Neil.',
+            image: './assets/images/image-book-collection-2.png'
+          })
+
+          .CardWithTitle
+            .CardWithTitle-header.flex.items-center.justify-between
+              .CardWithTitle-header-title TIN THƯ VIỆN
+
+              .CardWithTitle-header-see-all.flex.items-center 
+                |Xem tất cả 
+                <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.8376 3.62599C5.06541 3.39819 5.43475 3.39819 5.66256 3.62599L9.16256 7.12599C9.39037 7.3538 9.39037 7.72315 9.16256 7.95095L5.66256 11.451C5.43475 11.6788 5.06541 11.6788 4.8376 11.451C4.6098 11.2231 4.6098 10.8538 4.8376 10.626L7.92512 7.53847L4.8376 4.45095C4.6098 4.22315 4.6098 3.8538 4.8376 3.62599Z" fill="#B9B9B9"/></svg>
+
+            .CardWithTitle-body
+              .CardWithTitle-news.flex.flex-wrap
+                .CardWithTitle-news-item
+                  .owl-carousel.PostBlock-carousel 
+                    each item in [1,2]
+                      +PostBlock({
+                        layout: 'vertical',
+                        type: 'video',
+                        title: 'Bìa sách truyền tải thông điệp tác phẩm',
+                        description: 'Với một cuốn sách, bìa đóng vai trò quan trọng. Nó như chiếc áo, thể hiện diện mạo và phần nào nội dung, tinh thần của tác phẩm. Người cầm bút sau khi hoàn thiện bản thảo củ',
+                        subtitle: 'Hoạt động  - Đăng ngày:  01/12/2021',
+                        image: './assets/images/image-post-vertical.png',
+                      })
+
+                .CardWithTitle-news-item
+                  +PostBlock({
+                    layout: 'horizontal',
+                    type: 'video',
+                    title: 'Khai mạc diễn đàn tri thức trẻ Việt Nam toàn cầu - Tự hào trí tuệ Việt',
+                    description: 'Sáng nay 25/11, tại Hội trường A2 của trường Đại học Kinh tế Quốc dân',
+                    subtitle: 'Hoạt động  - Đăng ngày:  01/12/2021',
+                    image: './assets/images/image-post-horizontal.png',
+                  })
+                  +PostBlock({
+                    layout: 'horizontal',
+                    title: '16 Giáo sư, Phó Giáo sư Trường Đại học Kinh tế Quốc dân được trao tặng',
+                    description: 'Sáng nay 25/11, tại Hội trường A2 của trường Đại học Kinh tế Quốc dân',
+                    subtitle: 'Hoạt động  - Đăng ngày:  01/12/2021',
+                    image: './assets/images/image-post-horizontal.png',
+                  })
+                  +PostBlock({
+                    layout: 'horizontal',
+                    title: 'Quỹ học bổng VAS trao tặng máy tính hỗ trợ sinh viên có hoàn cảnh đặc',
+                    description: 'Sáng nay 25/11, tại Hội trường A2 của trường Đại học Kinh tế Quốc dân',
+                    subtitle: 'Hoạt động  - Đăng ngày:  01/12/2021',
+                    image: './assets/images/image-post-horizontal.png',
+                  })
+
+          .CardWithTitle
+            .CardWithTitle-header.flex.items-center.justify-between
+              .CardWithTitle-header-title CẢM NHẬN SÁCH
+
+              .CardWithTitle-header-see-all.flex.items-center 
+                |Xem tất cả 
+                <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.8376 3.62599C5.06541 3.39819 5.43475 3.39819 5.66256 3.62599L9.16256 7.12599C9.39037 7.3538 9.39037 7.72315 9.16256 7.95095L5.66256 11.451C5.43475 11.6788 5.06541 11.6788 4.8376 11.451C4.6098 11.2231 4.6098 10.8538 4.8376 10.626L7.92512 7.53847L4.8376 4.45095C4.6098 4.22315 4.6098 3.8538 4.8376 3.62599Z" fill="#B9B9B9"/></svg>
+
+            .CardWithTitle-body
+              .CardWithTitle-news.flex.flex-wrap
+                .CardWithTitle-news-item
+                  .owl-carousel.PostBlock-carousel 
+                    each item in [1,2]
+                      +PostBlock({
+                        layout: 'vertical',
+                        type: 'video',
+                        title: 'Bìa sách truyền tải thông điệp tác phẩm',
+                        description: 'Với một cuốn sách, bìa đóng vai trò quan trọng. Nó như chiếc áo, thể hiện diện mạo và phần nào nội dung, tinh thần của tác phẩm. Người cầm bút sau khi hoàn thiện bản thảo củ',
+                        subtitle: 'Hoạt động  - Đăng ngày:  01/12/2021',
+                        image: './assets/images/image-post-vertical.png',
+                      })
+
+                .CardWithTitle-news-item
+                  +PostBlock({
+                    layout: 'horizontal',
+                    type: 'video',
+                    title: 'Khai mạc diễn đàn tri thức trẻ Việt Nam toàn cầu - Tự hào trí tuệ Việt',
+                    description: 'Sáng nay 25/11, tại Hội trường A2 của trường Đại học Kinh tế Quốc dân',
+                    subtitle: 'Hoạt động  - Đăng ngày:  01/12/2021',
+                    image: './assets/images/image-post-horizontal.png',
+                  })
+                  +PostBlock({
+                    layout: 'horizontal',
+                    title: '16 Giáo sư, Phó Giáo sư Trường Đại học Kinh tế Quốc dân được trao tặng',
+                    description: 'Sáng nay 25/11, tại Hội trường A2 của trường Đại học Kinh tế Quốc dân',
+                    subtitle: 'Hoạt động  - Đăng ngày:  01/12/2021',
+                    image: './assets/images/image-post-horizontal.png',
+                  })
+                  +PostBlock({
+                    layout: 'horizontal',
+                    title: 'Quỹ học bổng VAS trao tặng máy tính hỗ trợ sinh viên có hoàn cảnh đặc',
+                    description: 'Sáng nay 25/11, tại Hội trường A2 của trường Đại học Kinh tế Quốc dân',
+                    subtitle: 'Hoạt động  - Đăng ngày:  01/12/2021',
+                    image: './assets/images/image-post-horizontal.png',
+                  })
+
+          .CardWithTitle
+            .CardWithTitle-header.flex.items-center.justify-between
+              .CardWithTitle-header-title SÁCH XEM GẦN ĐÂY
+
+            .CardWithTitle-body
+              .CardWithTitle-books-list.flex.flex-wrap
+                each item in dataBooksList
+                  .CardWithTitle-books-list-item
+                    +BookBlock(item)
+
+          .CardWithTitle
+            .CardWithTitle-header.flex.items-center.justify-between
+              .CardWithTitle-header-title Thống kê
+
+            .CardWithTitle-body 
+              +CardInfo({ data: dataCardInfoStatistical1 })
+              +CardInfo({ data: dataCardInfoStatistical2 })

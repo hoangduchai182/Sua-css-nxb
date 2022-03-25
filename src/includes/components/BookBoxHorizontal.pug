@@ -1,0 +1,12 @@
+mixin BookBoxHorizontal({ image, description, dataTable })
+  .BookBoxHorizontal.flex.flex-wrap
+    .BookBoxHorizontal-image
+      img(src=`${image}`, alt="")
+    .BookBoxHorizontal-info 
+      .BookBoxHorizontal-info-description= description 
+
+      table.BookBoxHorizontal-info-table
+        each item in dataTable 
+          tr 
+            td= item.key 
+            td= item.value

@@ -1,0 +1,33 @@
+.Input {
+  &-control {
+    width: 100%;
+    outline: none;
+    border: 1px solid color(white);
+    background: color(white);
+    border-radius: 3px;
+
+    &::placeholder {
+      color: color(gray);
+    }
+  }
+
+  &.middle {
+    .Input {
+      &-control {
+        height: 38px;
+        padding: 2px 12px;
+        font-size: 13px;
+      }
+    }
+  }
+
+  &.small-middle {
+    .Input {
+      &-control {
+        height: 32px;
+        padding: 2px 8px;
+        font-size: 13px;
+      }
+    }
+  }
+}

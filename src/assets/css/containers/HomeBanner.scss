@@ -1,0 +1,24 @@
+.HomeBanner {
+  &-item {
+    border-radius: 5px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &-wrapper {
+    &-item {
+      &:first-child {
+        margin-bottom: 16px;
+
+        @media (max-width: 991px) {
+          .HomeBanner-item {
+            border-radius: 0;
+          }
+        }
+      }
+    }
+  }
+}

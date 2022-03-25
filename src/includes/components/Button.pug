@@ -1,0 +1,39 @@
+//- const TButtonProps = {
+//-   className?: string,
+//-   type?: 'button' | 'submit' | 'reset',
+//-   size?: 'small' | 'small-middle' | 'middle' | 'large',
+//-   styleType?: string,
+//-   title?: string,
+//-   reverse?: boolean,
+//-   link?: string,
+//-   iconImage?: string,
+//-   badge?: { label: string, styleType: string },
+//- }
+
+mixin Button({ className = '', type = 'button', size = 'middle', styleType = 'primary', iconImage, title, reverse, link, badge } = {})
+  .Button(class=`${className} ${reverse ? 'reverse' : ''} ${size} ${styleType} ${!title && iconImage ? 'only-icon' : ''}`)
+    if link
+      a(href=`${link}`).Button-control.flex.items-center.justify-center
+        if iconImage
+          .Button-control-icon 
+            img(src=`${iconImage}`, alt="")
+
+        .Button-control-title
+          = title
+          block title
+
+        if badge
+          .Button-badge.flex.items-center.justify-center(class=`${badge.styleType}`)= badge.label
+
+    else
+      button(type=`${type}`).Button-control.flex.items-center.justify-center
+        if iconImage
+          .Button-control-icon 
+            img(src=`${iconImage}`, alt="")
+
+        .Button-control-title
+          = title
+          block title
+
+        if badge
+          .Button-badge.flex.items-center.justify-center(class=`${badge.styleType}`)= badge.label

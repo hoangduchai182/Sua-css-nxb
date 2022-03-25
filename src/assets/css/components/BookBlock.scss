@@ -1,0 +1,36 @@
+.BookBlock {
+  &.horizontal {
+    display: flex;
+    align-items: flex-start;
+
+    .BookBlock {
+      &-image {
+        max-width: 59px;
+        flex: 0 0 59px;
+        width: 59px;
+        height: 89px;
+        margin: 0 20px 0 0;
+      }
+    }
+  }
+
+  &-image {
+    max-width: 114px;
+    flex: 0 0 114px;
+    width: 114px;
+    height: 171px;
+    @include centerImage;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0 auto 12px;
+  }
+
+  &-title {
+    a {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: color(mine-shaft);
+    }
+  }
+}

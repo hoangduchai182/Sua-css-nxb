@@ -1,0 +1,108 @@
+extends includes/layouts/Layout.pug
+
+block pages
+  .PostPage.layout
+    .container  
+      +Breadcrumb({ data: [
+        { link: '#', title: 'Trang chủ' },
+        { link: '#', title: 'Tin Tức' },
+      ] })
+      .layout-wrapper.flex.flex-wrap
+        .layout-col.main.full
+          include includes/containers/PostCategories.pug
+
+          .CardWithTitle.expand-padding
+            .CardWithTitle-header.flex.items-center.justify-between
+              .CardWithTitle-header-title TIN NỔI BẬT
+
+            .CardWithTitle-body 
+              include includes/containers/PostCarousel.pug
+              .CardWithTitle-news.flex.flex-wrap
+                .CardWithTitle-news-item.padding-mb(style="max-width: 100%; margin-right: 0; border-bottom: none;")
+                  +PostBlock({
+                    layout: 'horizontal',
+                    size: 'big',
+                    type: 'video',
+                    title: 'Gần 313.700 người dự thi Đại sứ Văn hóa đọc trong CAND',
+                    description: 'Theo thông tin từ Ban tổ chức Cuộc thi Đại sứ Văn hóa đọc trong CAND năm 2021, sau 4 tháng phát động đã có 103 đơn vị với 313.695 bài thi (313.695 người) dự thi. Các đơn vị đã tổ chức chấm vòng sơ khảo tại đơn vị, chọn ra 3.185 bài thi đạt chất lượng gửi về...',
+                    subtitle: '13-01-2022',
+                    image: './assets/images/image-post-horizontal.png',
+                  })
+                  +PostBlock({
+                    layout: 'horizontal',
+                    size: 'big',
+                    title: 'Gần 313.700 người dự thi Đại sứ Văn hóa đọc trong CAND',
+                    description: 'Theo thông tin từ Ban tổ chức Cuộc thi Đại sứ Văn hóa đọc trong CAND năm 2021, sau 4 tháng phát động đã có 103 đơn vị với 313.695 bài thi (313.695 người) dự thi. Các đơn vị đã tổ chức chấm vòng sơ khảo tại đơn vị, chọn ra 3.185 bài thi đạt chất lượng gửi về...',
+                    subtitle: '13-01-2022',
+                    image: './assets/images/image-post-horizontal.png',
+                  })
+                  +PostBlock({
+                    layout: 'horizontal',
+                    size: 'big',
+                    type: 'video',
+                    title: 'Gần 313.700 người dự thi Đại sứ Văn hóa đọc trong CAND',
+                    description: 'Theo thông tin từ Ban tổ chức Cuộc thi Đại sứ Văn hóa đọc trong CAND năm 2021, sau 4 tháng phát động đã có 103 đơn vị với 313.695 bài thi (313.695 người) dự thi. Các đơn vị đã tổ chức chấm vòng sơ khảo tại đơn vị, chọn ra 3.185 bài thi đạt chất lượng gửi về...',
+                    subtitle: '13-01-2022',
+                    image: './assets/images/image-post-horizontal.png',
+                  })
+                  +PostBlock({
+                    layout: 'horizontal',
+                    size: 'big',
+                    title: 'Gần 313.700 người dự thi Đại sứ Văn hóa đọc trong CAND',
+                    description: 'Theo thông tin từ Ban tổ chức Cuộc thi Đại sứ Văn hóa đọc trong CAND năm 2021, sau 4 tháng phát động đã có 103 đơn vị với 313.695 bài thi (313.695 người) dự thi. Các đơn vị đã tổ chức chấm vòng sơ khảo tại đơn vị, chọn ra 3.185 bài thi đạt chất lượng gửi về...',
+                    subtitle: '13-01-2022',
+                    image: './assets/images/image-post-horizontal.png',
+                  })
+                  +PostBlock({
+                    layout: 'horizontal',
+                    size: 'big',
+                    type: 'video',
+                    title: 'Gần 313.700 người dự thi Đại sứ Văn hóa đọc trong CAND',
+                    description: 'Theo thông tin từ Ban tổ chức Cuộc thi Đại sứ Văn hóa đọc trong CAND năm 2021, sau 4 tháng phát động đã có 103 đơn vị với 313.695 bài thi (313.695 người) dự thi. Các đơn vị đã tổ chức chấm vòng sơ khảo tại đơn vị, chọn ra 3.185 bài thi đạt chất lượng gửi về...',
+                    subtitle: '13-01-2022',
+                    image: './assets/images/image-post-horizontal.png',
+                  })
+
+              .PostPage-pagination
+                +Pagination({})
+
+        .layout-col.main.full
+          .CardWithTitle
+            .CardWithTitle-header.flex.items-center.justify-between
+              .CardWithTitle-header-title Tin mới nhất
+
+            .CardWithTitle-body 
+              .CardWithTitle-news.flex.flex-wrap
+                .CardWithTitle-news-item(style="max-width: 100%; margin-right: 0; border-bottom: none;")
+                  +PostBlock({
+                    layout: 'horizontal',
+                    type: 'video',
+                    title: 'Khai mạc diễn đàn tri thức trẻ Việt Nam toàn cầu - Tự hào trí tuệ Việt',
+                    subtitle: 'Hoạt động  - Đăng ngày:  01/12/2021',
+                    image: './assets/images/image-post-horizontal.png',
+                  })
+                  +PostBlock({
+                    layout: 'horizontal',
+                    title: '16 Giáo sư, Phó Giáo sư Trường Đại học Kinh tế Quốc dân được trao tặng',
+                    subtitle: 'Hoạt động  - Đăng ngày:  01/12/2021',
+                    image: './assets/images/image-post-horizontal.png',
+                  })
+                  +PostBlock({
+                    layout: 'horizontal',
+                    title: 'Quỹ học bổng VAS trao tặng máy tính hỗ trợ sinh viên có hoàn cảnh đặc',
+                    subtitle: 'Hoạt động  - Đăng ngày:  01/12/2021',
+                    image: './assets/images/image-post-horizontal.png',
+                  })
+                  +PostBlock({
+                    layout: 'horizontal',
+                    type: 'video',
+                    title: 'Khai mạc diễn đàn tri thức trẻ Việt Nam toàn cầu - Tự hào trí tuệ Việt',
+                    subtitle: 'Hoạt động  - Đăng ngày:  01/12/2021',
+                    image: './assets/images/image-post-horizontal.png',
+                  })
+                  +PostBlock({
+                    layout: 'horizontal',
+                    title: '16 Giáo sư, Phó Giáo sư Trường Đại học Kinh tế Quốc dân được trao tặng',
+                    subtitle: 'Hoạt động  - Đăng ngày:  01/12/2021',
+                    image: './assets/images/image-post-horizontal.png',
+                  })

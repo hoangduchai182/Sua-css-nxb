@@ -1,0 +1,13 @@
+extends includes/layouts/Layout.pug
+
+block pages
+  .PostPage.layout
+    .container  
+      +Breadcrumb({ data: [
+        { link: '#', title: 'Trang chủ' },
+        { link: '#', title: 'Tin Tức' },
+        { link: '#', title: 'Chi tiết tin tức' },
+      ] })
+      .layout-wrapper.flex.flex-wrap
+        .layout-col.main
+          include includes/containers/PostDetail.pug

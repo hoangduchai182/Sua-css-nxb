@@ -1,0 +1,190 @@
+.Navigation {
+  padding: 8px 0;
+  background: color(azure-radiance);
+
+  @media (max-width: 991px) {
+    background: color(science-blue);
+  }
+
+  .container {
+    padding: 0 15px !important;
+  }
+
+  &-list {
+    &-item {
+      cursor: pointer;
+      position: relative;
+
+      &>a {
+        font-size: 13px;
+        color: color(white);
+      }
+
+      &.active {
+        .Navigation-list-item-caret img {
+          transform: rotate(180deg);
+        }
+      }
+
+      &-caret {
+        position: relative;
+        width: 13px;
+        margin-left: 6px;
+
+        img {
+          transition: $common-transition;
+        }
+      }
+
+      &:not(:last-child) {
+        margin-right: 12px;
+        padding-right: 12px;
+
+        &::before {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          height: 16px;
+          transform: translateY(-50%);
+          width: 1px;
+          content: '';
+          background: color(white-alpha-03);
+        }
+      }
+    }
+  }
+
+  &-sub-items {
+    position: absolute;
+    top: calc(100% + 12px);
+    z-index: 2;
+    right: -37px;
+    width: 245px;
+    padding: 0 15px;
+    background: color(white);
+    border-radius: 5px;
+    box-shadow: $common-shadow;
+    transition: $common-transition;
+    opacity: 0;
+    pointer-events: none;
+
+    &.active {
+      pointer-events: unset;
+      opacity: 1;
+    }
+
+    &::before {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      content: '';
+      background: color(white);
+      right: 34px;
+      top: 8px;
+      transform: translateY(-50%) rotate(45deg);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    &-item {
+      position: relative;
+      z-index: 2;
+      padding: 12px 0;
+      transition: $common-transition;
+      background: color(white);
+
+      a {
+        font-size: 14px;
+        font-weight: 400;
+        color: color(emperor);
+        transition: $common-transition;
+        @include ellipsis(1);
+      }
+
+      &:hover {
+        border-color: color(azure-radiance) !important;
+
+        a {
+          color: color(azure-radiance);
+        }
+
+        svg path {
+          fill: color(azure-radiance);
+        }
+      }
+
+      &:not(:last-child) {
+        border-bottom: 1px solid color(alto);
+      }
+
+      &-icon {
+        flex: 0 0 16px;
+        max-width: 16px;
+        height: 16px;
+        margin-right: 8px;
+
+        svg path {
+          transition: $common-transition;
+        }
+      }
+    }
+  }
+
+  &-search {
+    min-width: 445px;
+    margin-right: 15px;
+    width: 100%;
+
+    @media (max-width: 991px) {
+      min-width: unset;
+    }
+
+    .Input {
+      width: 100%;
+
+      &-control {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+
+    .Button {
+      &-control {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+
+  &-wrapper {
+    &-item {
+      &:first-child {
+        @media (max-width: 991px) {
+          display: none;
+        }
+      }
+
+      &:last-child {
+        @media (max-width: 991px) {
+          width: 100%;
+        }
+
+        .Button {
+          &.search-desktop {
+            @media (max-width: 991px) {
+              display: none;
+            }
+          }
+
+          &.search-mobile {
+            display: none;
+
+            @media (max-width: 991px) {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
