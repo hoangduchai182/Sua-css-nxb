@@ -8,8 +8,8 @@
 //-   rating: string,
 //- }
 
-mixin ReaderBookView({ className = '', image, name, title, description, rating, online })
-  .ReaderBookView.flex.items-center(class=`${className} ${online ? 'online' : ''}`)
+mixin ReaderBookView({ disabledHover, className = '', image, name, title, description, rating, online })
+  .ReaderBookView.flex.items-center(class=`${className} ${online ? 'online' : ''}  ${disabledHover ? 'disabled-hover': ''}`)
     .ReaderBookView-avatar
       +Avatar({ name, online, check, image })
 

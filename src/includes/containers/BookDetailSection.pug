@@ -1,4 +1,4 @@
-.BookDetailSection.flex.flex-wrap.items-start 
+.BookDetailSection.flex.flex-wrap.items-start.justify-between
   .BookDetailSection-col
     .BookDetailSection-preview.flex.items-start
       .BookDetailSection-preview-list
@@ -23,7 +23,7 @@
       .BookDetailSection-preview-carousel-wrapper
         .BookDetailSection-preview-carousel 
           .owl-carousel#BookDetailSection-carousel 
-            each item in [1,2,3]
+            each item in [1,2,3,4,5]
               .item 
                 .BookDetailSection-preview-carousel-item 
                   img(src="./assets/images/image-book-detail.png", alt="")
@@ -50,6 +50,10 @@
 
     .SeeMore
       table.BookDetailSection-table
+        each item in dataTableBook 
+          tr 
+            td= item.key 
+            td= item.value
         each item in dataTableBook 
           tr 
             td= item.key 

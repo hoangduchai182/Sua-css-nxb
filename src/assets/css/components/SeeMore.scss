@@ -4,7 +4,7 @@
   overflow: hidden;
 
   &.active {
-    max-height: unset;
+    max-height: unset !important;
 
     .SeeMore {
       &-btn {

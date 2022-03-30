@@ -313,6 +313,7 @@ template {
 :root {
   --black: #000;
   --black-alpha-04: rgba(0, 0, 0, 0.4);
+  --black-alpha-03: rgba(0, 0, 0, 0.3);
   --white: #ffffff;
   --white-alpha-03: rgba(255, 255, 255, 0.3);
   --white-alpha-02: rgba(255, 255, 255, 0.2);
@@ -325,6 +326,7 @@ template {
   --red: #E70000;
   --azure-radiance: #097BE4;
   --azure-radiance-alpha-01: rgba(9, 123, 228, 0.1);
+  --azure-radiance-alpha-75: rgba(9, 123, 228, 0.75);
   --science-blue: #0065CA;
   --science-blue-alpha-01: rgba(0, 101, 202, 0.1);
   --science-blue-alpha-03: rgba(0, 101, 202, 0.3);
@@ -416,6 +418,27 @@ ul {
 .justify-end {
   justify-content: flex-end; }
 
+.owl-carousel.style-dots-rectangle .owl-dots {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%); }
+  .owl-carousel.style-dots-rectangle .owl-dots .owl-dot {
+    width: 55px;
+    height: 3px;
+    border-radius: 3px;
+    background: var(--white-alpha-03);
+    transition: 0.3s ease;
+    cursor: pointer;
+    outline: none;
+    margin: 0 5px; }
+    @media (max-width: 991px) {
+      .owl-carousel.style-dots-rectangle .owl-dots .owl-dot {
+        width: 30px;
+        height: 2px; } }
+    .owl-carousel.style-dots-rectangle .owl-dots .owl-dot:hover, .owl-carousel.style-dots-rectangle .owl-dots .owl-dot.active {
+      background: var(--azure-radiance-alpha-75); }
+
 .owl-carousel.style-arrow-circle .owl-next,
 .owl-carousel.style-arrow-circle .owl-prev {
   position: absolute;
@@ -462,21 +485,23 @@ ul {
 
 .layout {
   background: var(--alabaster);
-  padding: 30px 0; }
+  padding: 15px 0 30px; }
+  .layout-wrapper {
+    justify-content: space-between; }
   @media (max-width: 991px) {
     .layout {
       padding: 0 0 16px; } }
-  .layout .layout-col.left {
-    flex: 0 0 380px;
-    max-width: 380px;
-    margin-right: 30px; }
-  .layout .layout-col.right {
-    flex: 0 0 380px;
-    max-width: 380px;
-    margin-left: 30px; }
+  .layout .layout-col.left, .layout .layout-col.right {
+    flex: 0 0 calc(100% / 3 - 15px);
+    max-width: calc(100% / 3 - 15px); }
   .layout .layout-col.main {
-    flex: 0 0 calc(100% - 380px - 30px);
-    max-width: calc(100% - 380px - 30px); }
+    flex: 0 0 calc(100% * 2 / 3 - 15px);
+    max-width: calc(100% * 2 / 3 - 15px); }
+    .layout .layout-col.main .CardWithTitle {
+      padding: 12px 22px; }
+      @media (max-width: 991px) {
+        .layout .layout-col.main .CardWithTitle {
+          padding: 12px 16px; } }
     .layout .layout-col.main.full {
       flex: 0 0 100%;
       max-width: 100%; }
@@ -505,9 +530,13 @@ ul {
       @media (max-width: 991px) {
         .Header-logo:first-child::before {
           display: none; } }
-  @media (max-width: 991px) {
-    .Header-logo.neu {
-      display: none; } }
+  .Header-logo.neu {
+    max-width: 234px; }
+    .Header-logo.neu img {
+      width: 100%; }
+    @media (max-width: 991px) {
+      .Header-logo.neu {
+        display: none; } }
   .Header-logo.neu-mobile {
     display: none; }
     @media (max-width: 991px) {
@@ -545,6 +574,7 @@ ul {
     .Header-hotline-item-info-value {
       line-height: 1.3;
       font-weight: 900; }
+  .Header-btns .Avatar,
   .Header-btns .Button {
     margin-left: 15px; }
   @media (max-width: 991px) {
@@ -618,39 +648,42 @@ ul {
       margin: 0 8px; }
 
 .Navigation {
-  padding: 8px 0;
   background: var(--azure-radiance); }
   @media (max-width: 991px) {
     .Navigation {
+      padding: 8px 0;
       background: var(--science-blue); } }
   .Navigation .container {
     padding: 0 15px !important; }
   .Navigation-list-item {
     cursor: pointer;
-    position: relative; }
+    position: relative;
+    transition: 0.3s ease;
+    padding: 20px 12px; }
     .Navigation-list-item > a {
       font-size: 13px;
       color: var(--white); }
-    .Navigation-list-item.active .Navigation-list-item-caret img {
-      transform: rotate(180deg); }
+    .Navigation-list-item:hover {
+      background: var(--science-blue); }
+    .Navigation-list-item.active {
+      background: var(--science-blue); }
+      .Navigation-list-item.active .Navigation-list-item-caret img {
+        transform: rotate(180deg); }
     .Navigation-list-item-caret {
       position: relative;
       width: 13px;
       margin-left: 6px; }
       .Navigation-list-item-caret img {
         transition: 0.3s ease; }
-    .Navigation-list-item:not(:last-child) {
-      margin-right: 12px;
-      padding-right: 12px; }
-      .Navigation-list-item:not(:last-child)::before {
-        position: absolute;
-        top: 50%;
-        right: 0;
-        height: 16px;
-        transform: translateY(-50%);
-        width: 1px;
-        content: '';
-        background: var(--white-alpha-03); }
+    .Navigation-list-item:not(:last-child)::before {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      height: 16px;
+      transform: translateY(-50%);
+      width: 1px;
+      content: '';
+      background: var(--white-alpha-03); }
   .Navigation-sub-items {
     position: absolute;
     top: calc(100% + 12px);
@@ -804,12 +837,10 @@ ul {
     padding: 12px 0;
     transition: 0.3s ease;
     cursor: pointer; }
-    .NavigationMobile-list-item.active .NavigationMobile-list-item-caret img {
-      transform: rotate(0deg); }
     .NavigationMobile-list-item-caret {
       width: 16px;
       margin-left: auto; }
-      .NavigationMobile-list-item-caret img {
+      .NavigationMobile-list-item-caret svg {
         transform: rotate(180deg);
         transition: 0.3s ease; }
     .NavigationMobile-list-item a {
@@ -818,8 +849,14 @@ ul {
       color: var(--emperor);
       flex: 1;
       transition: 0.3s ease; }
+    .NavigationMobile-list-item.active .NavigationMobile-list-item-caret svg {
+      transform: rotate(0deg); }
     .NavigationMobile-list-item.active > a, .NavigationMobile-list-item:hover > a {
       color: var(--azure-radiance); }
+    .NavigationMobile-list-item.active .NavigationMobile-list-item-caret svg path, .NavigationMobile-list-item:hover .NavigationMobile-list-item-caret svg path {
+      stroke: var(--azure-radiance); }
+    .NavigationMobile-list-item.active .NavigationMobile-list-item-icon svg path, .NavigationMobile-list-item:hover .NavigationMobile-list-item-icon svg path {
+      fill: var(--azure-radiance); }
     .NavigationMobile-list-item:not(:last-child) {
       border-bottom: 1px solid var(--alto); }
     .NavigationMobile-list-item-icon {
@@ -1045,6 +1082,10 @@ ul {
 .Button.outline-white .Button-control {
   background: transparent;
   border-color: var(--white); }
+  .Button.outline-white .Button-control:hover {
+    background: var(--science-blue-alpha-03); }
+  .Button.outline-white .Button-control:active {
+    background: var(--science-blue); }
   .Button.outline-white .Button-control-title {
     color: var(--white); }
 
@@ -1119,7 +1160,7 @@ ul {
   .Button.small .Button-control-title {
     font-size: 13px; }
   .Button.small .Button-control-icon {
-    margin-right: 4px; }
+    margin-right: 8px; }
 
 .Button.small-middle.reverse .Button-control-icon {
   margin-right: 0;
@@ -1197,15 +1238,15 @@ ul {
     flex: 0 0 36px;
     max-width: 36px;
     height: 36px;
-    padding: 0 6px;
     margin-right: 8px;
-    display: flex; }
+    display: flex;
+    align-items: center; }
     .CardBookView-image img {
-      margin: auto;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center; }
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      object-position: center;
+      margin: auto; }
   .CardBookView-info-title {
     font-size: 13px;
     font-weight: 500;
@@ -1239,25 +1280,9 @@ ul {
   @media (max-width: 991px) {
     .CardWithTitle {
       border-radius: 0; } }
-  .CardWithTitle.expand-padding {
-    padding: 0; }
-    .CardWithTitle.expand-padding .CardWithTitle-header {
-      padding: 15px 30px; }
-      @media (max-width: 991px) {
-        .CardWithTitle.expand-padding .CardWithTitle-header {
-          padding: 12px 16px; } }
-      .CardWithTitle.expand-padding .CardWithTitle-header-title::before {
-        left: 30px; }
-        @media (max-width: 991px) {
-          .CardWithTitle.expand-padding .CardWithTitle-header-title::before {
-            left: 16px; } }
-    .CardWithTitle.expand-padding .CardWithTitle-body {
-      padding: 30px 30px 15px; }
-      @media (max-width: 991px) {
-        .CardWithTitle.expand-padding .CardWithTitle-body {
-          padding: 16px 0; } }
   .CardWithTitle-header {
     position: relative;
+    min-height: 38px;
     margin-bottom: 12px;
     border-bottom: 1px solid var(--mercury);
     padding-bottom: 8px; }
@@ -1389,7 +1414,7 @@ ul {
   .CardWithTitle-list-layout-pagination {
     margin-top: 15px; }
   .CardWithTitle-list-layout-filter {
-    padding: 10px 0 22px;
+    padding: 0px 0 12px;
     border-bottom: 1px solid var(--mercury); }
     @media (max-width: 991px) {
       .CardWithTitle-list-layout-filter {
@@ -1441,37 +1466,55 @@ ul {
     .CardWithTitle-news-list-item:not(:last-child) {
       margin-bottom: 16px; }
 
-.BookBlock.horizontal {
-  display: flex;
-  align-items: flex-start; }
-  .BookBlock.horizontal .BookBlock-image {
-    max-width: 59px;
-    flex: 0 0 59px;
-    width: 59px;
-    height: 89px;
-    margin: 0 20px 0 0; }
-
-.BookBlock-image {
-  max-width: 114px;
-  flex: 0 0 114px;
-  width: 114px;
-  height: 171px;
-  display: flex;
-  border-radius: 5px;
-  overflow: hidden;
-  margin: 0 auto 12px; }
-  .BookBlock-image img {
-    margin: auto;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center; }
-
-.BookBlock-title a {
-  display: block;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--mine-shaft); }
+.BookBlock {
+  padding: 8px;
+  transition: 0.3s ease; }
+  .BookBlock:hover {
+    box-shadow: 0px 15px 35px rgba(50, 50, 93, 0.1), 0px 5px 15px rgba(0, 0, 0, 0.07); }
+  .BookBlock.horizontal {
+    display: flex;
+    align-items: flex-start; }
+    .BookBlock.horizontal .BookBlock-image {
+      max-width: 89px;
+      flex: 0 0 89px;
+      width: 89px;
+      height: 89px;
+      margin: 0 20px 0 0; }
+      .BookBlock.horizontal .BookBlock-image a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%; }
+      .BookBlock.horizontal .BookBlock-image img {
+        margin: auto;
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 5px;
+        object-fit: contain;
+        object-position: center; }
+  .BookBlock-image {
+    max-width: 170px;
+    flex: 0 0 170px;
+    width: 170px;
+    height: 170px;
+    overflow: hidden;
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .BookBlock-image img {
+      margin: auto;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 5px; }
+  .BookBlock-title a {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--mine-shaft); }
 
 .PostBlock.vertical .PostBlock-image {
   margin-bottom: 8px; }
@@ -1509,6 +1552,9 @@ ul {
       .PostBlock.horizontal .PostBlock-image {
         flex: 0 0 125px !important;
         max-width: 125px !important; } }
+    .PostBlock.horizontal .PostBlock-image-video {
+      width: 32px;
+      height: 32px; }
   .PostBlock.horizontal .PostBlock-info-title {
     font-size: 13px;
     font-weight: 500;
@@ -1572,6 +1618,9 @@ ul {
   .BookCollection-header {
     padding: 10px 22px;
     border-bottom: 1px solid var(--white-alpha-02); }
+    @media (max-width: 991px) {
+      .BookCollection-header {
+        padding: 10px 16px; } }
     .BookCollection-header-item {
       font-size: 14px;
       font-weight: 600;
@@ -1593,26 +1642,39 @@ ul {
     padding: 30px 38px; }
     @media (max-width: 991px) {
       .BookCollection-main {
-        padding: 30px 16px; } }
+        padding: 30px 16px 20px;
+        flex-direction: column;
+        justify-content: center; } }
     .BookCollection-main-image {
       flex: 0 0 268px;
       max-width: 268px;
+      height: 268px;
       margin-right: 30px;
       display: flex; }
       @media (max-width: 991px) {
         .BookCollection-main-image {
           flex: 0 0 248px;
           max-width: 248px;
+          height: 248px;
           margin: 0 auto 30px; } }
       .BookCollection-main-image img {
         margin: auto;
-        max-width: 100%; }
+        max-width: 100%;
+        max-height: 100%;
+        width: unset !important;
+        object-fit: contain;
+        object-position: center;
+        border-radius: 5px;
+        box-shadow: 0px 12.0199px 18.0299px var(--black-alpha-03); }
     .BookCollection-main-info {
       flex: 1; }
       .BookCollection-main-info-title, .BookCollection-main-info-subtitle, .BookCollection-main-info-description {
         color: var(--white);
         margin-bottom: 8px;
         white-space: pre-wrap; }
+        @media (max-width: 991px) {
+          .BookCollection-main-info-title, .BookCollection-main-info-subtitle, .BookCollection-main-info-description {
+            padding: 0 15px; } }
       .BookCollection-main-info-title {
         font-size: 18px;
         font-weight: 500; }
@@ -1633,15 +1695,15 @@ ul {
   border-radius: 5px;
   background: var(--alabaster);
   padding: 8px;
-  transition: 0.3s ease;
-  cursor: pointer; }
+  transition: 0.3s ease; }
   @media (max-width: 991px) {
     .ReaderBookView {
       background: var(--white);
       border: 1px solid var(--science-blue-alpha-01); } }
-  .ReaderBookView:hover {
+  .ReaderBookView:hover:not(.disabled-hover) {
+    cursor: pointer;
     background: var(--azure-radiance-alpha-01); }
-    .ReaderBookView:hover .CardBookView-info-rating svg path {
+    .ReaderBookView:hover:not(.disabled-hover) .CardBookView-info-rating svg path {
       fill: var(--science-blue-alpha-03); }
   .ReaderBookView-avatar {
     margin-right: 8px; }
@@ -1796,7 +1858,8 @@ ul {
 .Breadcrumb {
   padding: 10px 12px;
   background: var(--white);
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-bottom: 15px; }
   @media (max-width: 991px) {
     .Breadcrumb {
       border-bottom: 1px solid var(--alto);
@@ -1911,9 +1974,12 @@ ul {
   height: 28px;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  transition: 0.3s ease; }
   .Avatar.border-blue {
     border: 1px solid var(--azure-radiance); }
+  .Avatar.hover-effect:hover {
+    transform: scale(1.1); }
   .Avatar.image .Avatar-image {
     border-radius: 50%;
     overflow: hidden;
@@ -1957,18 +2023,38 @@ ul {
     .Avatar-check img {
       width: 100%;
       margin: auto; }
+  .Avatar-badge {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 500;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    line-height: 1; }
+    .Avatar-badge.red {
+      background: var(--red);
+      color: var(--white); }
+    .Avatar-badge.blue {
+      background: var(--science-blue);
+      color: var(--white); }
+    .Avatar-badge.yellow {
+      background: var(--orange-peel);
+      color: var(--white); }
 
 .CardWithTab {
   border-radius: 5px;
   background: var(--white); }
   .CardWithTab-header {
-    padding: 10px 22px;
+    padding: 12px 22px;
     border-bottom: 1px solid var(--mercury);
     margin-bottom: 12px;
     overflow: auto; }
     @media (max-width: 991px) {
       .CardWithTab-header {
-        padding: 10px 16px; } }
+        padding: 12px 16px; } }
     .CardWithTab-header-item {
       font-size: 13px;
       color: var(--silver);
@@ -1989,7 +2075,7 @@ ul {
           opacity: 1; }
       .CardWithTab-header-item::before {
         position: absolute;
-        bottom: -10px;
+        bottom: -12px;
         content: '';
         left: 0;
         width: 100%;
@@ -2020,11 +2106,23 @@ ul {
   max-width: 264px;
   height: 264px;
   margin-right: 16px;
+  padding: 16px;
   display: flex;
-  border: 1px solid var(--alto); }
+  border: 1px solid var(--alto);
+  transition: 0.3s ease; }
   .BookBoxHorizontal-image img {
     margin: auto;
-    max-width: 100%; }
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 5px; }
+
+.BookBoxHorizontal:hover .BookBoxHorizontal-image {
+  box-shadow: 0px 15px 35px rgba(50, 50, 93, 0.1), 0px 5px 15px rgba(0, 0, 0, 0.07); }
+
+.BookBoxHorizontal:hover .BookBoxHorizontal-info-description {
+  color: var(--science-blue); }
 
 .BookBoxHorizontal-info {
   flex: 1; }
@@ -2032,16 +2130,20 @@ ul {
     font-size: 14px;
     font-weight: 500;
     margin-bottom: 15px;
-    color: var(--mine-shaft); }
+    color: var(--mine-shaft);
+    transition: 0.3s ease; }
   .BookBoxHorizontal-info-table {
     width: 100%;
     border-collapse: collapse; }
+    .BookBoxHorizontal-info-table tr:hover td {
+      background: var(--alabaster); }
     .BookBoxHorizontal-info-table td {
       border: 1px solid var(--alto);
       padding: 6px 12px;
       font-size: 13px;
       color: var(--jaguar);
-      vertical-align: middle; }
+      vertical-align: middle;
+      transition: 0.3s ease; }
       .BookBoxHorizontal-info-table td:first-child {
         white-space: nowrap; }
 
@@ -2137,7 +2239,7 @@ ul {
   max-height: 230px;
   overflow: hidden; }
   .SeeMore.active {
-    max-height: unset; }
+    max-height: unset !important; }
     .SeeMore.active .SeeMore-btn {
       position: relative; }
       .SeeMore.active .SeeMore-btn svg {
@@ -2207,8 +2309,13 @@ ul {
     .HomeBanner-wrapper-item:first-child .HomeBanner-item {
       border-radius: 0; } }
 
+.SearchAdvanced .CardWithTab-header {
+  margin-bottom: 0; }
+  @media (max-width: 991px) {
+    .SearchAdvanced .CardWithTab-header {
+      margin-bottom: 12px; } }
+
 .SearchAdvanced-item-row {
-  padding: 0 0 12px;
   margin: 0 -8px; }
   @media (max-width: 991px) {
     .SearchAdvanced-item-row:first-child .Select,
@@ -2220,7 +2327,14 @@ ul {
         margin-bottom: 8px; } }
   @media (max-width: 991px) {
     .SearchAdvanced-item-row {
-      margin: 0; } }
+      margin: 0; }
+      .SearchAdvanced-item-row:not(.auto) .SearchAdvanced-item-col {
+        flex: 0 0 100% !important;
+        max-width: 100% !important; }
+      .SearchAdvanced-item-row.auto {
+        margin-bottom: -8px; }
+        .SearchAdvanced-item-row.auto .Button {
+          margin: 0 8px 8px 0; } }
   .SearchAdvanced-item-row.line-bottom {
     border-bottom: 1px solid var(--mercury); }
 
@@ -2229,8 +2343,6 @@ ul {
   padding: 12px 8px; }
   @media (max-width: 991px) {
     .SearchAdvanced-item-col {
-      flex: 0 0 100% !important;
-      max-width: 100% !important;
       padding: 8px 0; }
       .SearchAdvanced-item-col.border::before {
         display: none; } }
@@ -2251,14 +2363,11 @@ ul {
   .SearchAdvanced-item-col.expand {
     flex: 1; }
 
-.SearchAdvanced .Input.middle .Input-control {
+.SearchAdvanced .Input.small-middle .Input-control {
   border-radius: 0;
   padding: 2px 6px;
   border-bottom: 1px dashed var(--black);
   color: var(--azure-radiance); }
-
-.SearchAdvanced .spacing {
-  margin: 0 8px; }
 
 .FilterCategoryMobile {
   position: fixed;
@@ -2477,14 +2586,15 @@ ul {
       padding: 12px;
       margin-bottom: 16px; } }
   .BookDetailSection-col {
-    flex: 0 0 50%;
-    max-width: 50%;
-    padding: 0 15px; }
+    flex: 0 0 calc(50%  - 15px);
+    max-width: calc(50%  - 15px); }
     @media (max-width: 991px) {
       .BookDetailSection-col {
         flex: 0 0 100%;
         max-width: 100%;
         padding: 0; } }
+    .BookDetailSection-col .SeeMore {
+      max-height: 255px; }
   .BookDetailSection-title {
     font-size: 24px;
     font-weight: 700;
@@ -2526,12 +2636,15 @@ ul {
     border-collapse: collapse; }
     .BookDetailSection-table thead td {
       font-weight: 500; }
+    .BookDetailSection-table tr:hover td {
+      background: var(--alabaster); }
     .BookDetailSection-table td {
       border: 1px solid var(--alto);
       padding: 6px 12px;
       font-size: 13px;
       color: var(--jaguar);
-      vertical-align: middle; }
+      vertical-align: middle;
+      transition: 0.3s ease; }
       .BookDetailSection-table td a {
         text-decoration: underline;
         color: var(--azure-radiance); }
@@ -2565,7 +2678,10 @@ ul {
       cursor: pointer; }
     .BookDetailSection-preview-list-group {
       max-height: calc(85px * 4 + 15px * 3);
-      overflow: auto; }
+      overflow: auto;
+      scroll-behavior: smooth; }
+      .BookDetailSection-preview-list-group::-webkit-scrollbar {
+        display: none; }
     .BookDetailSection-preview-list-item {
       display: flex;
       width: 85px;
@@ -2584,15 +2700,11 @@ ul {
         margin: auto; }
   .BookDetailSection-preview-carousel {
     position: relative;
-    flex: 0 0 447px;
-    max-width: 447px;
     border: 1px solid var(--science-blue-alpha-03);
     border-radius: 5px; }
     @media (max-width: 991px) {
       .BookDetailSection-preview-carousel {
-        border: none;
-        flex: unset;
-        max-width: unset; } }
+        border: none; } }
     .BookDetailSection-preview-carousel .owl-next,
     .BookDetailSection-preview-carousel .owl-prev {
       position: absolute;
@@ -2611,21 +2723,24 @@ ul {
       left: 0; }
     .BookDetailSection-preview-carousel .owl-next {
       right: 0; }
+    .BookDetailSection-preview-carousel-wrapper {
+      width: calc(100% - 85px - 15px); }
+      @media (max-width: 991px) {
+        .BookDetailSection-preview-carousel-wrapper {
+          width: 100%;
+          margin-bottom: 24px; } }
+      .BookDetailSection-preview-carousel-wrapper .BookDetailSection-actions {
+        margin-top: 24px; }
     .BookDetailSection-preview-carousel-item {
-      display: flex; }
-    @media (max-width: 991px) {
-      .BookDetailSection-preview-carousel-wrapper {
-        width: 100%;
-        margin-bottom: 24px; } }
-    .BookDetailSection-preview-carousel-wrapper .BookDetailSection-actions {
-      margin-top: calc(24px + 35px + 3px); }
-    .BookDetailSection-preview-carousel-item {
-      height: 447px; }
-    .BookDetailSection-preview-carousel img {
-      max-width: 100%;
-      max-height: 100%;
-      margin: auto;
-      width: auto !important; }
+      display: flex;
+      padding: 16px; }
+      .BookDetailSection-preview-carousel-item img {
+        max-width: 100%;
+        max-height: 100%;
+        margin: auto;
+        width: unset !important;
+        object-fit: contain;
+        object-position: center; }
     .BookDetailSection-preview-carousel .owl-dots {
       position: absolute;
       bottom: -35px;
@@ -2727,7 +2842,7 @@ ul {
 
 .PostCarousel {
   position: relative;
-  margin-bottom: 30px; }
+  margin: 30px 0; }
   @media (max-width: 991px) {
     .PostCarousel {
       margin-bottom: 0; } }
@@ -2884,19 +2999,16 @@ ul {
 .CategoryPage .CardInfo:not(:last-child) {
   margin-bottom: 12px; }
 
-.CategoryPage .Breadcrumb,
 .CategoryPage .SearchAdvanced {
   margin-bottom: 16px; }
 
 .CategoryPage .FolderTree:not(:last-child) {
   margin-bottom: 25px; }
 
-.BookDetail .Breadcrumb:not(:last-child),
 .BookDetail .CardWithTab:not(:last-child),
 .BookDetail .CardWithTitle:not(:last-child) {
   margin-bottom: 30px; }
   @media (max-width: 991px) {
-    .BookDetail .Breadcrumb:not(:last-child),
     .BookDetail .CardWithTab:not(:last-child),
     .BookDetail .CardWithTitle:not(:last-child) {
       margin-bottom: 16px; } }
@@ -2909,12 +3021,10 @@ ul {
 .BookDetail .FolderTree:not(:last-child) {
   margin-bottom: 25px; }
 
-.PostPage .Breadcrumb:not(:last-child),
 .PostPage .CardWithTab:not(:last-child),
 .PostPage .CardWithTitle:not(:last-child) {
   margin-bottom: 30px; }
   @media (max-width: 991px) {
-    .PostPage .Breadcrumb:not(:last-child),
     .PostPage .CardWithTab:not(:last-child),
     .PostPage .CardWithTitle:not(:last-child) {
       margin-bottom: 16px; } }
@@ -2934,7 +3044,3 @@ ul {
 @media (max-width: 991px) {
   .PostPage .layout-col:first-child {
     margin-bottom: 16px; } }
-
-@media (max-width: 991px) {
-  .PostPage .CardWithTitle-news-item.padding-mb {
-    padding: 16px; } }

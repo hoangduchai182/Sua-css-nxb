@@ -8,10 +8,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: $common-transition;
 
   &.border-blue {
     border: 1px solid color(azure-radiance);
   }
+
+  &.hover-effect {
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
 
   &.image {
     .Avatar-image {
@@ -69,6 +77,34 @@
     img {
       width: 100%;
       margin: auto;
+    }
+  }
+
+  &-badge {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 500;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    line-height: 1;
+
+    &.red {
+      background: color(red);
+      color: color(white);
+    }
+
+    &.blue {
+      background: color(science-blue);
+      color: color(white)
+    }
+
+    &.yellow {
+      background: color(orange-peel);
+      color: color(white);
     }
   }
 }

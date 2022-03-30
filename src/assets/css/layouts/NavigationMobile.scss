@@ -87,17 +87,11 @@
       transition: $common-transition;
       cursor: pointer;
 
-      &.active {
-        .NavigationMobile-list-item-caret img {
-          transform: rotate(0deg);
-        }
-      }
-
       &-caret {
         width: 16px;
         margin-left: auto;
 
-        img {
+        svg {
           transform: rotate(180deg);
           transition: $common-transition;
         }
@@ -111,10 +105,29 @@
         transition: $common-transition;
       }
 
+      &.active {
+        .NavigationMobile-list-item-caret svg {
+          transform: rotate(0deg);
+        }
+      }
+
       &.active,
       &:hover {
         &>a {
           color: color(azure-radiance);
+        }
+
+        .NavigationMobile-list-item {
+          &-caret {
+            svg path {
+              stroke: color(azure-radiance);
+            }
+          }
+          &-icon {
+            svg path {
+              fill: color(azure-radiance);
+            }
+          }
         }
       }
 

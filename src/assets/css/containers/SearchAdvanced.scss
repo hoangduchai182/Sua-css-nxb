@@ -1,16 +1,27 @@
 .SearchAdvanced {
+  .CardWithTab {
+    &-header {
+      margin-bottom: 0;
+
+      @media (max-width: 991px) {
+        margin-bottom: 12px;
+      }
+    }
+  }
+
   &-item {
     &-row {
-      padding: 0 0 12px;
       margin: 0 -8px;
 
       &:first-child {
         @media (max-width: 991px) {
+
           .Select,
           .Checkbox {
             flex: 0 0 100%;
             max-width: 100%;
-            &:not(:last-child)  {
+
+            &:not(:last-child) {
               margin-bottom: 8px;
             }
           }
@@ -19,6 +30,22 @@
 
       @media (max-width: 991px) {
         margin: 0;
+
+        &:not(.auto) {
+
+          .SearchAdvanced-item-col {
+            flex: 0 0 100% !important;
+            max-width: 100% !important;
+          }
+        }
+
+        &.auto {
+          margin-bottom: -8px;
+
+          .Button {
+            margin: 0 8px 8px 0;
+          }
+        }
       }
 
       &.line-bottom {
@@ -31,8 +58,6 @@
       padding: 12px 8px;
 
       @media (max-width: 991px) {
-        flex: 0 0 100% !important;
-        max-width: 100% !important;
         padding: 8px 0;
 
         &.border {
@@ -71,7 +96,7 @@
   }
 
   .Input {
-    &.middle {
+    &.small-middle {
       .Input {
         &-control {
           border-radius: 0;
@@ -81,9 +106,5 @@
         }
       }
     }
-  }
-
-  .spacing {
-    margin: 0 8px;
   }
 }

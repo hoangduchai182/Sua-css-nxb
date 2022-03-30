@@ -39,7 +39,7 @@ const owlCarousel = {
       autoplayHoverPause: true,
       smartSpeed: 300,
       lazyLoad: true,
-      dots: false,
+      dots: true,
       nav: true,
       navText: [
         '<img src="./assets/icons/icon-caret-circle-left-white.svg" alt="" />',
@@ -55,6 +55,9 @@ const owlCarousel = {
         },
         991: {
           items: 3,
+          mouseDrag: false,
+          touchDrag: false,
+          autoplay: false,
         },
       },
       center: true,
@@ -131,7 +134,6 @@ const owlCarousel = {
           lazyLoad: true,
           dots: false,
           nav: false,
-          margin: 16,
         });
 
         prevBtn.addEventListener("click", () => {
@@ -190,41 +192,63 @@ const owlCarousel = {
     });
   },
   setupBookDetailCarousel: function () {
-    $("#BookDetailSection-list").owlCarousel({
-      responsive: {
-        0: {
-          items: 4,
-          slideBy: 1,
-        },
-      },
-      loop: false,
-      smartSpeed: 300,
-      lazyLoad: true,
-      dots: false,
-      nav: true,
-      navText: [
-        '<img src="./assets/icons/icon-angle-up-gray-light.svg" alt="" />',
-        '<img src="./assets/icons/icon-angle-down-gray-light.svg" alt="" />',
-      ],
-      margin: 0,
-    });
-    $("#BookDetailSection-carousel").owlCarousel({
+    let activeIndex = 0;
+    const listSlider = document.querySelector(
+      ".BookDetailSection-preview-list-group"
+    );
+    const listSliderItems = listSlider?.querySelectorAll(
+      ".BookDetailSection-preview-list-item"
+    );
+    const arrowUp = document.querySelector(
+      ".BookDetailSection-preview-list-arrow.prev"
+    );
+    const arrowDown = document.querySelector(
+      ".BookDetailSection-preview-list-arrow.next"
+    );
+
+    const $owl = $("#BookDetailSection-carousel").owlCarousel({
       responsive: {
         0: {
           items: 1,
+          autoplay: true,
+        },
+        991: {
+          items: 1,
+          nav: true,
         },
       },
       loop: false,
+      autoplayTimeout: 4000,
+      autoplayHoverPause: true,
       smartSpeed: 300,
       lazyLoad: true,
-      dots: true,
-      nav: true,
+      dots: false,
+      nav: false,
       navText: [
         '<img src="./assets/icons/icon-angle-left-gray-light.svg" alt="" />',
         '<img src="./assets/icons/icon-angle-right-gray-light.svg" alt="" />',
       ],
       margin: 0,
     });
+
+    arrowUp?.addEventListener?.("click", () => {
+      listSlider.scrollTop = listSlider.scrollTop - 85 - 15;
+    });
+    
+    arrowDown?.addEventListener?.("click", () => {
+      listSlider.scrollTop = listSlider.scrollTop + 85 + 15;
+    });
+
+    listSliderItems?.forEach?.((item, index) =>
+      item.addEventListener("click", () => {
+        activeIndex = index;
+        $owl.trigger("to.owl.carousel", [index, 500]);
+        listSliderItems.forEach((i) => i.classList.remove("active"));
+        item.classList.add("active");
+      })
+    );
+
+    listSliderItems?.[activeIndex]?.classList?.add?.("active");
   },
 };
 
@@ -285,11 +309,13 @@ const navigation = {
       const caretIcon = item.querySelector(".Navigation-list-item-caret");
       const subItems = item.querySelector(".Navigation-sub-items");
 
-      caretIcon?.addEventListener?.("click", (e) => {
-        e.preventDefault();
-        item.classList.toggle("active");
-        subItems.classList.toggle("active");
-      });
+      if (caretIcon) {
+        item?.addEventListener?.("click", (e) => {
+          e.preventDefault();
+          item.classList.toggle("active");
+          subItems.classList.toggle("active");
+        });
+      }
 
       const listener = (event) => {
         if (!subItems || subItems.contains(event.target)) return;
@@ -309,11 +335,13 @@ const navigation = {
       const caretIcon = item.querySelector(".NavigationMobile-list-item-caret");
       const subItems = item.querySelector(".NavigationMobile-sub-items");
 
-      caretIcon?.addEventListener?.("click", (e) => {
-        e.preventDefault();
-        item.classList.toggle("active");
-        subItems.classList.toggle("active");
-      });
+      if (caretIcon) {
+        item?.addEventListener?.("click", (e) => {
+          e.preventDefault();
+          item.classList.toggle("active");
+          subItems.classList.toggle("active");
+        });
+      }
     });
   },
 };

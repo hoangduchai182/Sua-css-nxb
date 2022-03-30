@@ -2,7 +2,7 @@
   padding: 5.25px 0;
 
   .container {
-    padding: 0 15px !important; 
+    padding: 0 15px !important;
   }
 
   &-logo {
@@ -28,6 +28,12 @@
     }
 
     &.neu {
+      max-width: 234px;
+
+      img {
+        width: 100%;
+      }
+
       @media (max-width: 991px) {
         display: none;
       }
@@ -98,6 +104,8 @@
   }
 
   &-btns {
+
+    .Avatar,
     .Button {
       margin-left: 15px;
     }

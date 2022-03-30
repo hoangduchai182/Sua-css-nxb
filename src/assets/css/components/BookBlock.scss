@@ -1,28 +1,62 @@
 .BookBlock {
+  padding: 8px;
+  transition: $common-transition;
+
+  &:hover {
+    box-shadow: 0px 15px 35px rgba(50, 50, 93, 0.1), 0px 5px 15px rgba(0, 0, 0, 0.07);
+  }
+
   &.horizontal {
     display: flex;
     align-items: flex-start;
 
     .BookBlock {
       &-image {
-        max-width: 59px;
-        flex: 0 0 59px;
-        width: 59px;
+        max-width: 89px;
+        flex: 0 0 89px;
+        width: 89px;
         height: 89px;
         margin: 0 20px 0 0;
+
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+        }
+
+        img {
+          margin: auto;
+          max-width: 100%;
+          max-height: 100%;
+          border-radius: 5px;
+          object-fit: contain;
+          object-position: center;
+        }
       }
     }
   }
 
   &-image {
-    max-width: 114px;
-    flex: 0 0 114px;
-    width: 114px;
-    height: 171px;
-    @include centerImage;
-    border-radius: 5px;
+    max-width: 170px;
+    flex: 0 0 170px;
+    width: 170px;
+    height: 170px;
     overflow: hidden;
     margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      margin: auto;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 5px;
+    }
   }
 
   &-title {

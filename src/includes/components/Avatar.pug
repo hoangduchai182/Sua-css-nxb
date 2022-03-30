@@ -1,5 +1,5 @@
-mixin Avatar({ className = '', image, name, online, check, borderBlue, })
-  .Avatar(class=`${className} ${image ? 'image' : ''} ${name ? 'name' : ''} ${borderBlue ? 'border-blue' : ''}`)
+mixin Avatar({ isHoverEffect, className = '', image, name, online, check, borderBlue, badge })
+  .Avatar(class=`${className} ${image ? 'image' : ''} ${name ? 'name' : ''} ${borderBlue ? 'border-blue' : ''} ${isHoverEffect ? 'hover-effect' : ''}`)
     if image
       .Avatar-image 
         img(src=`${image}`, alt="")
@@ -13,3 +13,6 @@ mixin Avatar({ className = '', image, name, online, check, borderBlue, })
     if check  
       .Avatar-check
         img(src="./assets/icons/icon-check-white.svg", alt="")
+
+    if badge
+      .Avatar-badge.flex.items-center.justify-center(class=`${badge.styleType}`)= badge.label

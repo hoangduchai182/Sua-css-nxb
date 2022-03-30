@@ -107,6 +107,14 @@
         background: transparent;
         border-color: color(white);
 
+        &:hover {
+          background: color(science-blue-alpha-03);
+        }
+
+        &:active {
+          background: color(science-blue);
+        }
+
         &-title {
           color: color(white);
         }
@@ -250,7 +258,7 @@
         }
 
         &-icon {
-          margin-right: 4px;
+          margin-right: 8px;
         }
       }
     }

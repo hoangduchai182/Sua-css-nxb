@@ -34,13 +34,17 @@ header.Header
             iconImage: './assets/icons/icon-books-white.svg',
           })
 
-          +Button({
-            title: 'Tài khoản',
-            size: 'small',
-            styleType: 'outline-primary',
-            badge: { label: '!', styleType: 'yellow' },
-            iconImage: './assets/icons/icon-user-circle-blue.svg'
-          })
+          if isLogged
+            +Avatar({ name: 'T', badge: { label: '!', styleType: 'yellow' } })
+
+          else
+            +Button({
+              title: 'Tài khoản',
+              size: 'small',
+              styleType: 'outline-primary',
+              badge: { label: '!', styleType: 'yellow' },
+              iconImage: './assets/icons/icon-user-circle-blue.svg'
+            })
 
       .Header-wrapper-item.mobile.flex.items-center
         +Button({

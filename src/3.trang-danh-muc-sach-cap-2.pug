@@ -46,6 +46,11 @@ block pages
                 .CardWithTitle-list-layout-filter 
                   +FilterTags({ data: dataFilterCategoriesBook })
 
+                .CardWithTitle-list-layout-item.grid.tab-main
+                  each item in dataBooksHorizontalGrid 
+                    .CardWithTitle-books-horizontal-grid-item
+                      +BookBoxHorizontal(item)
+
                 .CardWithTitle-list-layout-item.list.flex.flex-wrap.tab-main
                   each item in dataBooksList
                     .CardWithTitle-books-list-item
@@ -53,11 +58,6 @@ block pages
                   each item in dataBooksList
                     .CardWithTitle-books-list-item
                       +BookBlock(item)
-
-                .CardWithTitle-list-layout-item.grid.tab-main
-                  each item in dataBooksHorizontalGrid 
-                    .CardWithTitle-books-horizontal-grid-item
-                      +BookBoxHorizontal(item)
 
                 .CardWithTitle-list-layout-pagination 
                   +Pagination({})

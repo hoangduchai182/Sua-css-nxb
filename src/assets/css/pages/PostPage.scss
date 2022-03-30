@@ -1,5 +1,4 @@
 .PostPage {
-  .Breadcrumb,
   .CardWithTab,
   .CardWithTitle {
     &:not(:last-child) {
@@ -33,12 +32,6 @@
       &:first-child {
         margin-bottom: 16px;
       }
-    }
-  }
-
-  .CardWithTitle-news-item.padding-mb {
-    @media (max-width: 991px) {
-      padding: 16px;
     }
   }
 }
