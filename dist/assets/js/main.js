@@ -38,7 +38,7 @@ const owlCarousel = {
       autoplayTimeout: 4000,
       autoplayHoverPause: true,
       smartSpeed: 300,
-      lazyLoad: false,
+      lazyLoad: true,
       dots: true,
       nav: true,
       navText: [
@@ -55,6 +55,7 @@ const owlCarousel = {
           autoplay: true,
           mouseDrag: true,
           touchDrag: true,
+          lazyLoad: true,
         },
         991: {
           items: 3,
@@ -68,7 +69,6 @@ const owlCarousel = {
       autoplayTimeout: 4000,
       autoplayHoverPause: true,
       smartSpeed: 300,
-      lazyLoad: false,
       dots: false,
       nav: false,
       margin: 16,
