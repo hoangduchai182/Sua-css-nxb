@@ -38,7 +38,7 @@ const owlCarousel = {
       autoplayTimeout: 4000,
       autoplayHoverPause: true,
       smartSpeed: 300,
-      lazyLoad: true,
+      lazyLoad: false,
       dots: true,
       nav: true,
       navText: [
@@ -68,7 +68,7 @@ const owlCarousel = {
       autoplayTimeout: 4000,
       autoplayHoverPause: true,
       smartSpeed: 300,
-      lazyLoad: true,
+      lazyLoad: false,
       dots: false,
       nav: false,
       margin: 16,
@@ -133,7 +133,7 @@ const owlCarousel = {
           autoplayTimeout: 4000,
           autoplayHoverPause: true,
           smartSpeed: 300,
-          lazyLoad: true,
+          lazyLoad: false,
           dots: false,
           nav: false,
         });
@@ -161,7 +161,7 @@ const owlCarousel = {
       autoplayTimeout: 4000,
       autoplayHoverPause: true,
       smartSpeed: 300,
-      lazyLoad: true,
+      lazyLoad: false,
       dots: false,
       nav: true,
       navText: [
@@ -183,7 +183,7 @@ const owlCarousel = {
       autoplayTimeout: 4000,
       autoplayHoverPause: true,
       smartSpeed: 300,
-      lazyLoad: true,
+      lazyLoad: false,
       dots: false,
       nav: true,
       navText: [
