@@ -135,7 +135,8 @@
     }
   }
 
-  &-books-list {
+  &-books-list,
+  &-books-grid {
     &-item {
       padding: 24px 0;
       flex: 0 0 calc(100% / 4);
@@ -143,6 +144,7 @@
       border-bottom: 1px solid color(gallery);
 
       @media (max-width: 991px) {
+        padding: 16px 0;
         flex: 0 0 calc(100% / 2);
         max-width: calc(100% / 2);
       }
@@ -161,7 +163,7 @@
     }
   }
 
-  &-books-horizontal-grid-item {
+  &-books-horizontal-list-item {
     padding: 20px 0;
     border-bottom: 1px solid color(gallery);
   }
@@ -230,6 +232,12 @@
               margin: unset;
             }
           }
+        }
+      }
+
+      &.grid {
+        .CardWithTitle-books-grid-item {
+          padding: 16px 0;
         }
       }
     }

@@ -52,6 +52,9 @@ const owlCarousel = {
       responsive: {
         0: {
           items: 1.5,
+          autoplay: true,
+          mouseDrag: true,
+          touchDrag: true,
         },
         991: {
           items: 3,
@@ -62,7 +65,6 @@ const owlCarousel = {
       },
       center: true,
       loop: true,
-      autoplay: true,
       autoplayTimeout: 4000,
       autoplayHoverPause: true,
       smartSpeed: 300,
@@ -91,7 +93,7 @@ const owlCarousel = {
           autoplayTimeout: 4000,
           autoplayHoverPause: true,
           smartSpeed: 300,
-          lazyLoad: true,
+          lazyLoad: false,
           dots: false,
           nav: false,
           margin: 16,
@@ -211,17 +213,17 @@ const owlCarousel = {
         0: {
           items: 1,
           autoplay: true,
+          nav: true,
         },
         991: {
           items: 1,
-          nav: true,
         },
       },
       loop: false,
       autoplayTimeout: 4000,
       autoplayHoverPause: true,
       smartSpeed: 300,
-      lazyLoad: true,
+      lazyLoad: false,
       dots: false,
       nav: false,
       navText: [
@@ -234,7 +236,7 @@ const owlCarousel = {
     arrowUp?.addEventListener?.("click", () => {
       listSlider.scrollTop = listSlider.scrollTop - 85 - 15;
     });
-    
+
     arrowDown?.addEventListener?.("click", () => {
       listSlider.scrollTop = listSlider.scrollTop + 85 + 15;
     });
@@ -256,6 +258,24 @@ const header = {
   init: function () {
     this.menuMobile();
     this.filterCategoryMobile();
+    this.dropdownAccount();
+  },
+  dropdownAccount: function () {
+    const headerAccount = document.querySelector(".Header-account");
+    const headerDropdown = document.querySelector(".Header-sub-items");
+
+    if (headerAccount && headerDropdown) {
+      headerAccount?.addEventListener?.("click", (e) => {
+        e.preventDefault();
+        headerDropdown.classList.toggle("active");
+      });
+      const listener = (event) => {
+        if (!headerDropdown || headerDropdown.contains(event.target)) return;
+        headerDropdown.classList.remove("active");
+      };
+      document.addEventListener("mousedown", listener);
+      document.addEventListener("touchstart", listener);
+    }
   },
   menuMobile: function () {
     const btnMenu = document.querySelector(".NavigationMobile-open");

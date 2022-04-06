@@ -5,6 +5,7 @@
   z-index: 100;
 
   @media (max-width: 991px) {
+    display: none;
     right: 50%;
     transform: translateX(-50%);
   }

@@ -6,7 +6,7 @@
   }
 
   &.blue {
-    background: linear-gradient(270deg, #084B99 0%, #0074B5 100%);
+    background: linear-gradient(45deg, var(--azure-radiance-alpha-75), var(--azure-radiance));
 
     .BookCollection {
       &-header {

@@ -40,17 +40,17 @@ block pages
                     |Lọc
 
 
-                .CardWithTitle-list-layout-item.flex.flex-wrap.tab-main
-                  each item in dataBooksList 
-                    .CardWithTitle-books-list-item
-                      +BookBlock(item)
-
                 .CardWithTitle-list-layout-item.list.flex.flex-wrap.tab-main
                   each item in dataBooksHorizontalList
                     .CardWithTitle-books-list-item
                       +BookBlock(item)
                   each item in dataBooksHorizontalList
                     .CardWithTitle-books-list-item
+                      +BookBlock(item)
+
+                .CardWithTitle-list-layout-item.grid.flex.flex-wrap.tab-main
+                  each item in dataBooksList 
+                    .CardWithTitle-books-grid-item
                       +BookBlock(item)
 
                 .CardWithTitle-list-layout-pagination 

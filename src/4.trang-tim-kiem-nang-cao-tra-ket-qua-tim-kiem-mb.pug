@@ -10,9 +10,12 @@ block pages
       ] })
       include includes/containers/FilterCategoryMobile.pug
 
+
       .layout-wrapper.flex 
         .layout-col.main
           include includes/containers/SearchAdvanced.pug
+
+          include includes/containers/ReturnResultSearch.pug
 
           .CardWithTitle.tab-wrapper
             .CardWithTitle-header.flex.items-center.justify-between
@@ -41,15 +44,15 @@ block pages
 
 
                 .CardWithTitle-list-layout-item.flex.flex-wrap.tab-main
-                  each item in dataBooksList 
+                  each item in dataBooksHorizontalList
+                    .CardWithTitle-books-list-item
+                      +BookBlock(item)
+                  each item in dataBooksHorizontalList
                     .CardWithTitle-books-list-item
                       +BookBlock(item)
 
-                .CardWithTitle-list-layout-item.list.flex.flex-wrap.tab-main
-                  each item in dataBooksHorizontalList
-                    .CardWithTitle-books-list-item
-                      +BookBlock(item)
-                  each item in dataBooksHorizontalList
+                .CardWithTitle-list-layout-item.flex.flex-wrap.tab-main
+                  each item in dataBooksList 
                     .CardWithTitle-books-list-item
                       +BookBlock(item)
 
