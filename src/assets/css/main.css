@@ -652,13 +652,12 @@ ul {
           transition: 0.3s ease; }
 
 .Footer {
-  text-align: center;
-  padding: 0 15px; }
+  text-align: center; }
   .Footer-top {
     background: url("../images/bg-footer.png");
     background-size: cover;
     background-position: center;
-    padding: 30px 0; }
+    padding: 30px 15px; }
     .Footer-top h1,
     .Footer-top h2,
     .Footer-top h3,
@@ -689,6 +688,7 @@ ul {
           font-size: 13px; } }
   .Footer-bottom {
     height: 30px;
+    padding: 0 15px;
     background: var(--science-blue); }
     @media (max-width: 991px) {
       .Footer-bottom {
@@ -1434,6 +1434,13 @@ ul {
         padding: 16px 0;
         flex: 0 0 calc(100% / 2);
         max-width: calc(100% / 2); } }
+    .CardWithTitle-books-list-item.horizontal .BookBlock-title, .CardWithTitle-books-grid-item.horizontal .BookBlock-title {
+      max-width: unset;
+      margin: unset; }
+    @media (max-width: 991px) {
+      .CardWithTitle-books-list-item.horizontal, .CardWithTitle-books-grid-item.horizontal {
+        flex: 0 0 100%;
+        max-width: 100%; } }
     .CardWithTitle-books-list-item .BookBlock-title, .CardWithTitle-books-grid-item .BookBlock-title {
       max-width: 90%;
       margin: auto; }

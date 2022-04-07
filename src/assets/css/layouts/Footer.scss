@@ -1,12 +1,11 @@
 .Footer {
   text-align: center;
-  padding: 0 15px;
 
   &-top {
     background: url('../images/bg-footer.png');
     background-size: cover;
     background-position: center;
-    padding: 30px 0;
+    padding: 30px 15px;
 
     h1,
     h2,
@@ -40,6 +39,7 @@
 
   &-bottom {
     height: 30px;
+    padding: 0 15px;
     background: color(science-blue);
 
     @media (max-width: 991px) {

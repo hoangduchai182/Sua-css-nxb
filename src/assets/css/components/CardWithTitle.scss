@@ -149,6 +149,18 @@
         max-width: calc(100% / 2);
       }
 
+      &.horizontal {
+        .BookBlock-title {
+          max-width: unset;
+          margin: unset;
+        }
+
+        @media (max-width: 991px) {
+          flex: 0 0 100%;
+          max-width: 100%;
+        } 
+      }
+
       .BookBlock-title {
         max-width: 90%;
         margin: auto;
