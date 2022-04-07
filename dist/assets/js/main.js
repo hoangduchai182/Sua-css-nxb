@@ -60,7 +60,6 @@ const owlCarousel = {
       responsive: {
         0: {
           items: 1.5,
-          autoplay: true,
           mouseDrag: true,
           touchDrag: true,
         },
@@ -72,6 +71,7 @@ const owlCarousel = {
         },
       },
       center: true,
+      autoplay: false,
       loop: true,
       lazyLoad: true,
       autoplayTimeout: 4000,
