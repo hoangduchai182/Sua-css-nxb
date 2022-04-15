@@ -76,6 +76,7 @@
       height: 268px;
       margin-right: 30px;
       display: flex;
+      position: relative;
 
       @media (max-width: 991px) {
         flex: 0 0 248px;
@@ -85,13 +86,7 @@
       }
 
       img {
-        margin: auto;
-        max-width: 100%;
-        max-height: 100%;
-        width: unset !important;
-        object-fit: contain;
-        object-position: center;
-        border-radius: 5px;
+        @include centerImage;
         box-shadow: 0px 12.0199px 18.0299px color(black-alpha-03);
       }
     }

@@ -102,12 +102,16 @@
     }
 
     &-image {
+      position: relative;
       flex: 0 0 37px;
       max-width: 37px;
       height: 56px;
       border-radius: 2px;
-      @include centerImage;
       margin-right: 8px;
+
+      img {
+        @include centerImage;
+      }
     }
 
     &-title {
