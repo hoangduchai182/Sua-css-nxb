@@ -1,0 +1,53 @@
+extends includes/layouts/Layout.pug
+
+block pages
+  .ProfilePage.layout
+    .container  
+      +Breadcrumb({ data: [
+        { link: '#', title: 'Trang chủ' },
+        { link: '#', title: 'Sách đang đọc' },
+      ] })
+      .layout-wrapper.flex 
+        .layout-col.left
+          +ProfileCard('document')
+        .layout-col.main
+          .ProfileInfomationPage-wrapper 
+            .CardWithTitle.tab-wrapper
+              .CardWithTitle-header.flex.items-center.justify-between
+                .CardWithTitle-header-title SÁCH ĐANG ĐỌC
+                .CardWithTitle-header-layout.flex.items-center 
+                  .CardWithTitle-header-layout-btn.list.tab-item
+                    <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.86108 6.11115H14.0833" stroke="#E0E0E0" stroke-width="1.16667" stroke-linecap="round"/><path d="M7.86108 10.0001H14.0833" stroke="#E0E0E0" stroke-width="1.16667" stroke-linecap="round"/><path d="M7.86108 13.889H14.0833" stroke="#E0E0E0" stroke-width="1.16667" stroke-linecap="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M4.74995 6.55568C5.1795 6.55568 5.52772 6.20745 5.52772 5.7779C5.52772 5.34835 5.1795 5.00012 4.74995 5.00012C4.32039 5.00012 3.97217 5.34835 3.97217 5.7779C3.97217 6.20745 4.32039 6.55568 4.74995 6.55568Z" fill="#E0E0E0"/><path fill-rule="evenodd" clip-rule="evenodd" d="M4.74995 10.4445C5.1795 10.4445 5.52772 10.0962 5.52772 9.66669C5.52772 9.23714 5.1795 8.88892 4.74995 8.88892C4.32039 8.88892 3.97217 9.23714 3.97217 9.66669C3.97217 10.0962 4.32039 10.4445 4.74995 10.4445Z" fill="#E0E0E0"/><path fill-rule="evenodd" clip-rule="evenodd" d="M4.74995 14.3334C5.1795 14.3334 5.52772 13.9852 5.52772 13.5556C5.52772 13.1261 5.1795 12.7778 4.74995 12.7778C4.32039 12.7778 3.97217 13.1261 3.97217 13.5556C3.97217 13.9852 4.32039 14.3334 4.74995 14.3334Z" fill="#E0E0E0"/></svg>
+
+                  .CardWithTitle-header-layout-btn.grid.tab-item
+                    <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2.4165" y="3.00012" width="5.44444" height="5.44444" fill="#E0E0E0" stroke="#E0E0E0" stroke-width="1.75" stroke-linejoin="round"/><rect x="10.9722" y="3.00012" width="5.44444" height="5.44444" fill="#E0E0E0" stroke="#E0E0E0" stroke-width="1.75" stroke-linejoin="round"/><rect x="2.4165" y="11.5557" width="5.44444" height="5.44444" fill="#E0E0E0" stroke="#E0E0E0" stroke-width="1.75" stroke-linejoin="round"/><rect x="10.9722" y="11.5557" width="5.44444" height="5.44444" fill="#E0E0E0" stroke="#E0E0E0" stroke-width="1.75" stroke-linejoin="round"/></svg>
+
+
+              .CardWithTitle-body
+                .CardWithTitle-list-layout 
+                  .CardWithTitle-list-layout-filter-sort.flex.items-center
+                    .CardWithTitle-list-layout-filter-search.flex.items-center 
+                      .CardWithTitle-list-layout-filter-search-icon 
+                        img(src="./assets/icons/icon-search-gray.svg", alt="")
+                      input(type="text" placeholder="Nhập tên tác giả, tựa sách, tài liệu, mã ISBN bạn muốn tìm kiếm...")
+                      button Tìm sách
+
+                    .CardWithTitle-list-layout-filter-sort-select.flex.items-center 
+                      |Sắp xếp: 
+                      +Select({ placeholder: 'Theo thứ tự A - Z', reverse: true, size: 'small-middle' })
+
+                  .CardWithTitle-list-layout-item.list.tab-main
+                    each item in dataBooksHorizontalGrid 
+                      .CardWithTitle-books-horizontal-list-item
+                        +BookBoxHorizontal(item)
+
+                  .CardWithTitle-list-layout-item.grid.flex.flex-wrap.tab-main
+                    each item in dataBooksList
+                      .CardWithTitle-books-grid-item
+                        +BookBlock(item)
+                    each item in dataBooksList
+                      .CardWithTitle-books-grid-item
+                        +BookBlock(item)
+
+                  .CardWithTitle-list-layout-pagination 
+                    +Pagination({})

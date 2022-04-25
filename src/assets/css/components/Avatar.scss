@@ -47,6 +47,7 @@
       font-weight: 500;
       text-align: center;
       color: color(white);
+      line-height: 1;
     }
   }
 
@@ -105,6 +106,19 @@
     &.yellow {
       background: color(orange-peel);
       color: color(white);
+    }
+  }
+
+  &-upload {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 16px;
+    height: 16px;
+
+    img {
+      width: 100%;
+      pointer-events: none;
     }
   }
 }

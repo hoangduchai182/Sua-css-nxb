@@ -324,6 +324,7 @@ template {
   --vermilion: #FF3D00;
   --emperor: #4f4f4f;
   --red: #E70000;
+  --red-alpha-75: rgba(231, 0, 0, 0.75);
   --azure-radiance: #097BE4;
   --azure-radiance-alpha-01: rgba(9, 123, 228, 0.1);
   --azure-radiance-alpha-75: rgba(9, 123, 228, 0.75);
@@ -331,6 +332,7 @@ template {
   --science-blue-alpha-01: rgba(0, 101, 202, 0.1);
   --science-blue-alpha-03: rgba(0, 101, 202, 0.3);
   --mine-shaft: #333333;
+  --mine-shaft-alpha-05: rgba(51, 51, 51, 0.5);
   --yellow-orange: #FFBD3C;
   --cream-can: #F2C94C;
   --gray: #828282;
@@ -341,6 +343,8 @@ template {
   --pale-sky: #6C757D;
   --gallery: #EFEFEF;
   --orange-peel: #F39F00;
+  --orange-peel-alpha-35: rgba(243, 159, 0, 0.35);
+  --orange-peel-alpha-15: rgba(243, 159, 0, 0.15);
   --tangerine: #E29502;
   --forest-green: #27AE34;
   --mountain-meadow: #13B871;
@@ -1141,6 +1145,16 @@ ul {
   .Button.primary .Button-control-title {
     color: var(--white); }
 
+.Button.primary-transparent .Button-control {
+  background: var(--azure-radiance-alpha-01);
+  border-color: var(--azure-radiance-alpha-01); }
+  .Button.primary-transparent .Button-control:hover {
+    background: var(--wild-sand); }
+  .Button.primary-transparent .Button-control:active {
+    background: var(--science-blue-alpha-01); }
+  .Button.primary-transparent .Button-control-title {
+    color: var(--azure-radiance); }
+
 .Button.outline-primary .Button-control {
   background: var(--white);
   border-color: var(--azure-radiance); }
@@ -1272,24 +1286,48 @@ ul {
 .Button.only-icon .Button-control-icon {
   margin: 0; }
 
-.Input-control {
-  width: 100%;
-  outline: none;
-  border: 1px solid var(--white);
-  background: var(--white);
-  border-radius: 3px; }
-  .Input-control::placeholder {
-    color: var(--gray); }
-
-.Input.middle .Input-control {
-  height: 38px;
-  padding: 2px 12px;
-  font-size: 13px; }
-
-.Input.small-middle .Input-control {
-  height: 32px;
-  padding: 2px 8px;
-  font-size: 13px; }
+.Input {
+  position: relative; }
+  .Input.show-hide-password .Input-control {
+    padding-right: 30px; }
+  .Input-control {
+    width: 100%;
+    outline: none;
+    border: 1px solid var(--white);
+    background: var(--white);
+    border-radius: 3px; }
+    .Input-control::placeholder {
+      color: var(--gray); }
+  .Input.middle .Input-control {
+    height: 38px;
+    padding: 2px 12px;
+    font-size: 13px; }
+  .Input.small-middle .Input-control {
+    height: 32px;
+    padding: 2px 8px;
+    font-size: 13px; }
+  .Input.gray .Input-control {
+    border-color: var(--alto);
+    background-color: var(--wild-sand); }
+  .Input-show-hide-password {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none; }
+    .Input-show-hide-password img {
+      pointer-events: none; }
+      .Input-show-hide-password img:first-child {
+        display: block; }
+      .Input-show-hide-password img:last-child {
+        display: none; }
+    .Input-show-hide-password.active img:first-child {
+      display: none; }
+    .Input-show-hide-password.active img:last-child {
+      display: block; }
 
 .CardBookView {
   position: relative;
@@ -1423,7 +1461,8 @@ ul {
       .CardWithTitle-header-layout-btn:hover {
         background: var(--azure-radiance);
         border-color: var(--azure-radiance); }
-        .CardWithTitle-header-layout-btn:hover svg path, .CardWithTitle-header-layout-btn:hover svg rect {
+        .CardWithTitle-header-layout-btn:hover svg path,
+        .CardWithTitle-header-layout-btn:hover svg rect {
           fill: var(--white);
           stroke: var(--white); }
       .CardWithTitle-header-layout-btn.active, .CardWithTitle-header-layout-btn:active {
@@ -1510,9 +1549,37 @@ ul {
       .CardWithTitle-list-layout-filter {
         padding: 0 16px 12px;
         margin: 0 -16px; } }
+    .CardWithTitle-list-layout-filter-search {
+      flex: 4;
+      min-height: 35px;
+      padding: 4px 8px 4px 15px;
+      background: var(--wild-sand); }
+      .CardWithTitle-list-layout-filter-search-icon {
+        flex: 0 0 16px;
+        max-width: 16px;
+        height: 16px; }
+        .CardWithTitle-list-layout-filter-search-icon img {
+          width: 100%; }
+      .CardWithTitle-list-layout-filter-search input {
+        flex: 1;
+        margin: 0 8px 0 0;
+        padding: 0 8px;
+        outline: none;
+        border: none;
+        border-right: 1px solid var(--black-alpha-04);
+        background: transparent;
+        font-size: 13px; }
+      .CardWithTitle-list-layout-filter-search button {
+        outline: none;
+        border: none;
+        background: transparent;
+        font-size: 13px;
+        cursor: pointer;
+        color: var(--azure-radiance); }
     .CardWithTitle-list-layout-filter-sort {
       padding: 12px 0;
-      border-bottom: 1px solid var(--mercury); }
+      border-bottom: 1px solid var(--mercury);
+      white-space: nowrap; }
       @media (max-width: 991px) {
         .CardWithTitle-list-layout-filter-sort {
           margin: 0 -16px; } }
@@ -2114,7 +2181,8 @@ ul {
       font-size: 14px;
       font-weight: 500;
       text-align: center;
-      color: var(--white); }
+      color: var(--white);
+      line-height: 1; }
   .Avatar-online {
     position: absolute;
     width: 12px;
@@ -2159,6 +2227,15 @@ ul {
     .Avatar-badge.yellow {
       background: var(--orange-peel);
       color: var(--white); }
+  .Avatar-upload {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 16px;
+    height: 16px; }
+    .Avatar-upload img {
+      width: 100%;
+      pointer-events: none; }
 
 .CardWithTab {
   border-radius: 5px;
@@ -2328,6 +2405,9 @@ ul {
   display: block; }
   .Checkbox.single .Checkbox-wrapper {
     margin-right: 0px; }
+  .Checkbox.gray .Checkbox-wrapper {
+    background: var(--wild-sand);
+    border-color: var(--alto); }
   .Checkbox-input {
     position: absolute;
     z-index: 2;
@@ -2421,6 +2501,23 @@ ul {
     opacity: 0; }
   .Modal-open, .Modal-close {
     cursor: pointer; }
+
+.InfomationCard {
+  padding: 16px;
+  background: var(--white);
+  border-radius: 5px; }
+  .InfomationCard-title {
+    color: var(--gray);
+    margin-bottom: 10px;
+    font-size: 14px; }
+  .InfomationCard-description {
+    color: var(--red);
+    font-weight: 500;
+    font-size: 16px; }
+  .InfomationCard-icon {
+    flex: 0 0 16px;
+    max-width: 16px;
+    margin-right: 8px; }
 
 .HomeBanner-item {
   border-radius: 5px;
@@ -3131,6 +3228,158 @@ ul {
     .ReturnResultSearch-item strong {
       font-weight: 500; }
 
+.AuthForm {
+  width: 436px;
+  border-radius: 5px;
+  background: var(--white); }
+  .AuthForm-header-item {
+    flex: 0 0 50%;
+    max-width: 50%;
+    font-size: 14px;
+    color: var(--gray);
+    cursor: pointer;
+    position: relative;
+    min-height: 50px;
+    padding: 5px;
+    transition: 0.3s ease;
+    border-bottom: 1px solid var(--alto); }
+    .AuthForm-header-item:hover {
+      color: var(--azure-radiance); }
+    .AuthForm-header-item.active {
+      font-weight: 500;
+      color: var(--azure-radiance); }
+      .AuthForm-header-item.active::before {
+        transform: scaleX(1); }
+    .AuthForm-header-item::before {
+      position: absolute;
+      content: '';
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--azure-radiance);
+      transition: 0.3s ease;
+      transform: scaleX(0); }
+    .AuthForm-header-item-platform {
+      border-radius: 2px;
+      border: 1px solid var(--alabaster);
+      width: 28px;
+      height: 28px;
+      display: flex; }
+      .AuthForm-header-item-platform:first-child {
+        margin-left: 10px; }
+      .AuthForm-header-item-platform img {
+        width: 20px;
+        margin: auto; }
+  .AuthForm-title {
+    font-weight: 700;
+    font-size: 22px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--mine-shaft); }
+  .AuthForm-description {
+    font-size: 14px;
+    text-align: center;
+    color: var(--mine-shaft);
+    margin-bottom: 28px; }
+  .AuthForm-body {
+    padding: 36px 30px 45px 30px; }
+  .AuthForm-form-control:not(:last-child) {
+    margin-bottom: 15px; }
+  .AuthForm-form-control .Button-control {
+    width: 100%; }
+  .AuthForm-label {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--mine-shaft);
+    display: block; }
+  .AuthForm-link {
+    font-size: 12px;
+    color: var(--red-alpha-75); }
+    .AuthForm-link:hover {
+      text-decoration: underline; }
+  .AuthForm-badge {
+    padding: 8px 12px;
+    border-radius: 3px;
+    border: 1px solid var(--orange-peel-alpha-35);
+    background-color: var(--orange-peel-alpha-15);
+    font-size: 14px;
+    color: var(--mine-shaft);
+    margin-bottom: 15px; }
+
+.ProfileCard {
+  padding: 8px 15px;
+  background: var(--white);
+  border-radius: 5px; }
+  .ProfileCard-account {
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--alto); }
+    .ProfileCard-account-avatar {
+      position: relative;
+      flex: 0 0 42px;
+      max-width: 42px;
+      margin-right: 12px; }
+      .ProfileCard-account-avatar input {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer; }
+      .ProfileCard-account-avatar .Avatar {
+        width: 42px;
+        flex: 0 0 42px;
+        max-width: 42px;
+        height: 42px; }
+        .ProfileCard-account-avatar .Avatar.name .Avatar-name {
+          font-size: 24px;
+          font-weight: 700; }
+    .ProfileCard-account-info {
+      flex: 1; }
+      .ProfileCard-account-info-description {
+        font-size: 13px;
+        color: var(--mine-shaft); }
+      .ProfileCard-account-info-title {
+        color: var(--mine-shaft);
+        font-weight: 500;
+        font-size: 14px; }
+  .ProfileCard-sub-items-item {
+    position: relative;
+    z-index: 2;
+    padding: 12px 0;
+    transition: 0.3s ease;
+    background: var(--white); }
+    .ProfileCard-sub-items-item a {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--emperor);
+      width: 100%;
+      transition: 0.3s ease;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical; }
+    .ProfileCard-sub-items-item.active, .ProfileCard-sub-items-item:hover {
+      border-color: var(--azure-radiance) !important; }
+      .ProfileCard-sub-items-item.active a, .ProfileCard-sub-items-item:hover a {
+        color: var(--azure-radiance); }
+      .ProfileCard-sub-items-item.active svg.fill path, .ProfileCard-sub-items-item:hover svg.fill path {
+        fill: var(--azure-radiance); }
+      .ProfileCard-sub-items-item.active svg.stroke path, .ProfileCard-sub-items-item:hover svg.stroke path {
+        stroke: var(--azure-radiance); }
+    .ProfileCard-sub-items-item:not(:last-child) {
+      border-bottom: 1px solid var(--alto); }
+    .ProfileCard-sub-items-item-icon {
+      flex: 0 0 16px;
+      max-width: 16px;
+      height: 16px;
+      margin-right: 8px; }
+      .ProfileCard-sub-items-item-icon svg path {
+        transition: 0.3s ease; }
+
 .HomePage .HomeBanner:not(:last-child),
 .HomePage .BookCollection:not(:last-child),
 .HomePage .CardWithTab:not(:last-child),
@@ -3205,3 +3454,105 @@ ul {
 @media (max-width: 991px) {
   .PostPage .layout-col:first-child {
     margin-bottom: 16px; } }
+
+.AuthPage {
+  position: relative;
+  min-height: 515px;
+  padding: 35px 15px 50px; }
+  .AuthPage-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+    .AuthPage-bg::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: '';
+      z-index: 2;
+      background: var(--mine-shaft-alpha-05); }
+    .AuthPage-bg img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center; }
+  .AuthPage-body {
+    position: relative;
+    z-index: 3; }
+
+.ProfilePage .layout-col.left,
+.ProfilePage .layout-col.right {
+  max-width: calc(100% / 4 - 15px);
+  flex: 0 0 calc(100% / 4 - 15px); }
+
+.ProfilePage .layout-col.main {
+  flex: 0 0 calc(100% * 9 / 12 - 15px);
+  max-width: calc(100% * 9 / 12 - 15px); }
+
+.ProfilePage .CardWithTitle-list-layout-filter-sort-select {
+  padding-right: 0; }
+
+.ProfileInfomationPage-info {
+  margin: 0 -15px 24px; }
+  .ProfileInfomationPage-info-item {
+    width: calc(100% / 3);
+    padding: 0 15px; }
+
+.ProfileInfomationPage-form {
+  padding: 30px 0 15px; }
+  .ProfileInfomationPage-form.flex .ProfileInfomationPage-form-item:first-child {
+    flex: 0 0 255px;
+    max-width: 255px;
+    margin-right: 40px; }
+  .ProfileInfomationPage-form.flex .ProfileInfomationPage-form-item:last-child {
+    flex: 1; }
+  .ProfileInfomationPage-form-item-row {
+    padding: 7.5px 0; }
+    .ProfileInfomationPage-form-item-row-item:first-child {
+      flex: 0 0 130px;
+      max-width: 130px;
+      margin-right: 12px; }
+    .ProfileInfomationPage-form-item-row-item:last-child {
+      flex: 1; }
+    .ProfileInfomationPage-form-item-row-item .Input {
+      max-width: 360px; }
+  .ProfileInfomationPage-form-item-label {
+    font-size: 14px;
+    color: var(--mine-shaft); }
+
+.ProfileInfomationPage-avatar {
+  margin: 0 auto 15px; }
+  .ProfileInfomationPage-avatar .Avatar {
+    flex: 0 0 94px;
+    max-width: 94px;
+    height: 94px;
+    width: 94px;
+    margin: auto; }
+    .ProfileInfomationPage-avatar .Avatar.name .Avatar-name {
+      font-size: 50px; }
+
+.ProfileInfomationPage-upload {
+  position: relative;
+  margin: 0 auto 12px; }
+  .ProfileInfomationPage-upload .Button {
+    width: fit-content;
+    margin: auto; }
+  .ProfileInfomationPage-upload input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 2;
+    cursor: pointer; }
+  .ProfileInfomationPage-upload-text {
+    font-size: 13px;
+    text-align: center;
+    color: var(--gray); }

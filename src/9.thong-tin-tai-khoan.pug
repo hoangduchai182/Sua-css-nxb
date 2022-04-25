@@ -1,0 +1,92 @@
+extends includes/layouts/Layout.pug
+
+block pages
+  .ProfilePage.layout
+    .container  
+      +Breadcrumb({ data: [
+        { link: '#', title: 'Trang chủ' },
+        { link: '#', title: 'Thông tin tài khoản' },
+      ] })
+      .layout-wrapper.flex 
+        .layout-col.left
+          +ProfileCard('user-circle')
+        .layout-col.main
+          .ProfileInfomationPage-wrapper 
+            .ProfileInfomationPage-info.flex.flex-wrap
+              each item in dataInformationCard
+                .ProfileInfomationPage-info-item
+                  +InfomationCard(item)
+
+
+            .CardWithTitle
+              .CardWithTitle-header.flex.items-center.justify-between
+                .CardWithTitle-header-title THAY ĐỔI THÔNG TIN TÀI KHOẢN
+
+              .CardWithTitle-body 
+                .ProfileInfomationPage-form.flex.flex-wrap 
+                  .ProfileInfomationPage-form-item
+                    .ProfileInfomationPage-avatar 
+                      +Avatar({ name: 'T' })
+
+                    .ProfileInfomationPage-upload 
+                      input(type="file")
+                      +Button({ title: 'Cập nhật ảnh đại diện', iconImage: './assets/icons/icon-camera-blue.svg', styleType: 'primary-transparent' })
+
+                    .ProfileInfomationPage-upload-text Dung lượng file tối đa 1 MB #[br] Định dạng:.JPEG, .PNG
+
+                  .ProfileInfomationPage-form-item
+                    .ProfileInfomationPage-form-item-row.flex.items-center 
+                      .ProfileInfomationPage-form-item-row-item
+                        .ProfileInfomationPage-form-item-label Tên tài khoản
+
+                      .ProfileInfomationPage-form-item-row-item
+                        .ProfileInfomationPage-form-item-control
+                          +Input({ placeholder: 'Nhập tên tài khoản', styleType: 'gray' })
+
+                    .ProfileInfomationPage-form-item-row.flex.items-center 
+                      .ProfileInfomationPage-form-item-row-item
+                        .ProfileInfomationPage-form-item-label Địa chỉ email
+
+                      .ProfileInfomationPage-form-item-row-item
+                        .ProfileInfomationPage-form-item-control
+                          +Input({ placeholder: 'Nhập email', styleType: 'gray' })
+
+                    .ProfileInfomationPage-form-item-row.flex.items-center 
+                      .ProfileInfomationPage-form-item-row-item
+                        .ProfileInfomationPage-form-item-label Trường
+
+                      .ProfileInfomationPage-form-item-row-item
+                        .ProfileInfomationPage-form-item-label Đại học Kinh tế Quốc Dân
+
+                    .ProfileInfomationPage-form-item-row.flex.items-center 
+                      .ProfileInfomationPage-form-item-row-item
+                        .ProfileInfomationPage-form-item-label Khoa
+
+                      .ProfileInfomationPage-form-item-row-item
+                        .ProfileInfomationPage-form-item-label Toán kinh tế
+
+
+                    .ProfileInfomationPage-form-item-row.flex.items-center 
+                      .ProfileInfomationPage-form-item-row-item
+                        .ProfileInfomationPage-form-item-label Lớp
+
+                      .ProfileInfomationPage-form-item-row-item
+                        .ProfileInfomationPage-form-item-label K63
+
+
+                    .ProfileInfomationPage-form-item-row.flex.items-center 
+                      .ProfileInfomationPage-form-item-row-item
+                        .ProfileInfomationPage-form-item-label Mã SV
+
+                      .ProfileInfomationPage-form-item-row-item
+                        .ProfileInfomationPage-form-item-label 11210408
+
+
+                    .ProfileInfomationPage-form-item-row.flex.items-center 
+                      .ProfileInfomationPage-form-item-row-item
+                        .ProfileInfomationPage-form-item-label 
+
+                      .ProfileInfomationPage-form-item-row-item
+                        .ProfileInfomationPage-form-item-control
+                          +Button({ size: 'small-middle', title: 'Cập nhật thông tin' })
+

@@ -1,0 +1,8 @@
+extends includes/layouts/Layout.pug
+
+block pages
+  .AuthPage.flex.items-center.justify-center
+    .AuthPage-bg 
+      img(src="./assets/images/bg-auth.png", alt="")
+    .AuthPage-body.flex.items-center.justify-center
+      +AuthForm()

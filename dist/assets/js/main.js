@@ -6,6 +6,7 @@ window.onload = () => {
   tabWrapper.init();
   select2.init();
   seeMoreSection.init();
+  showHidePassword.init();
   modal.init();
 };
 
@@ -39,7 +40,7 @@ const owlCarousel = {
           slideBy: 1,
           mouseDrag: false,
           touchDrag: false,
-        }
+        },
       },
       loop: true,
       autoplay: true,
@@ -101,7 +102,7 @@ const owlCarousel = {
               items: 1,
               mouseDrag: false,
               touchDrag: false,
-            }
+            },
           },
           loop: true,
           autoplay: false,
@@ -561,6 +562,27 @@ const toast = {
       }, 500);
       clearTimeout(timeout);
     }, 3000);
+  },
+};
+
+const showHidePassword = {
+  init: function () {
+    this.config();
+  },
+  config: function () {
+    const inputPasswords = document.querySelectorAll(
+      ".Input.show-hide-password"
+    );
+
+    inputPasswords.forEach((item) => {
+      const btnShowHide = item.querySelector(".Input-show-hide-password");
+      const input = item.querySelector(".Input-control");
+
+      btnShowHide.addEventListener("click", () => {
+        btnShowHide.classList.toggle("active");
+        input.type = input.type === 'password' ? 'text' : 'password'
+      });
+    });
   },
 };
 

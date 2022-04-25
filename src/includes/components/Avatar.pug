@@ -1,4 +1,4 @@
-mixin Avatar({ isHoverEffect, className = '', image, name, online, check, borderBlue, badge })
+mixin Avatar({ isHoverEffect, className = '', image, name, online, check, borderBlue, badge, upload })
   .Avatar(class=`${className} ${image ? 'image' : ''} ${name ? 'name' : ''} ${borderBlue ? 'border-blue' : ''} ${isHoverEffect ? 'hover-effect' : ''}`)
     if image
       .Avatar-image 
@@ -13,6 +13,10 @@ mixin Avatar({ isHoverEffect, className = '', image, name, online, check, border
     if check  
       .Avatar-check
         img(src="./assets/icons/icon-check-white.svg", alt="")
+
+    if upload
+      .Avatar-upload
+        img(src="./assets/icons/icon-upload.svg", alt="")
 
     if badge
       .Avatar-badge.flex.items-center.justify-center(class=`${badge.styleType}`)= badge.label

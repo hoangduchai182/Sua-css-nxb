@@ -1,0 +1,17 @@
+.ProfilePage {
+
+  .layout-col.left,
+  .layout-col.right {
+    max-width: calc(100% / 4 - 15px);
+    flex: 0 0 calc(100% / 4 - 15px);
+  }
+
+  .layout-col.main {
+    flex: 0 0 calc(100% * 9 / 12 - 15px);
+    max-width: calc(100% * 9 / 12 - 15px);
+  }
+
+  .CardWithTitle-list-layout-filter-sort-select {
+    padding-right: 0;
+  }
+}

@@ -80,6 +80,27 @@
     }
   }
 
+  &.primary-transparent {
+    .Button {
+      &-control {
+        background: color(azure-radiance-alpha-01);
+        border-color: color(azure-radiance-alpha-01);
+
+        &:hover {
+          background: color(wild-sand);
+        }
+
+        &:active {
+          background: color(science-blue-alpha-01);
+        }
+
+        &-title {
+          color: color(azure-radiance);
+        }
+      }
+    }
+  }
+
   &.outline-primary {
     .Button {
       &-control {

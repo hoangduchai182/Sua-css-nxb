@@ -10,6 +10,15 @@
     }
   }
 
+  &.gray {
+    .Checkbox {
+      &-wrapper {
+        background: color(wild-sand);
+        border-color: color(alto);
+      }
+    }
+  }
+
   &-input {
     position: absolute;
     z-index: 2;
