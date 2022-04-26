@@ -3,6 +3,17 @@
   min-height: 515px;
   padding: 35px 15px 50px;
 
+  @media (max-width: 991px) {
+    min-height: auto;
+    padding: 0 0 15px 0;
+  }
+
+  .Breadcrumb {
+    @media (max-width: 991px) {
+      margin-bottom: 15px !important;
+    }
+  }
+
   &-bg {
     position: absolute;
     top: 0;

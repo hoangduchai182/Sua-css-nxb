@@ -23,6 +23,12 @@
           &:last-child {
             flex: 1;
           }
+
+          @media (max-width: 991px) {
+            flex: 0 0 100% !important;
+            max-width: 100% !important;
+            margin-bottom: 30px;
+          }
         }
       }
     }
@@ -30,6 +36,27 @@
     &-item {
       &-row {
         padding: 7.5px 0;
+
+        &.row-control {
+          @media (max-width: 991px) {
+            flex-wrap: wrap;
+
+            .ProfileInfomationPage-form-item-row {
+              &-item {
+                flex: 0 0 100% !important;
+                max-width: 100% !important;
+  
+                &:first-child {
+                  margin-bottom: 8px;
+                }
+
+                .Button-control {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
 
         &-item {
           &:first-child {

@@ -1554,6 +1554,11 @@ ul {
       min-height: 35px;
       padding: 4px 8px 4px 15px;
       background: var(--wild-sand); }
+      @media (max-width: 991px) {
+        .CardWithTitle-list-layout-filter-search {
+          border: 1px solid var(--silver);
+          border-radius: 3px;
+          padding: 4px 8px; } }
       .CardWithTitle-list-layout-filter-search-icon {
         flex: 0 0 16px;
         max-width: 16px;
@@ -1616,6 +1621,39 @@ ul {
           margin-right: 4px; }
           .CardWithTitle-list-layout-filter-sort-btn svg path {
             transition: 0.3s ease; }
+    .CardWithTitle-list-layout-filter-quick-tag {
+      margin: 12px -16px 0;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--alto);
+      border-top: 1px solid var(--alto); }
+      .CardWithTitle-list-layout-filter-quick-tag-item {
+        font-size: 12px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: 0.3s ease;
+        color: var(--emperor);
+        flex: 0 0 calc(100% / 4);
+        max-width: 0 0 calc(100% / 4);
+        position: relative; }
+        .CardWithTitle-list-layout-filter-quick-tag-item:not(:last-child)::before {
+          position: absolute;
+          content: '';
+          top: 50%;
+          transform: translateY(-50%);
+          width: 1px;
+          height: 18px;
+          background: var(--black-alpha-04);
+          right: 0; }
+        .CardWithTitle-list-layout-filter-quick-tag-item:hover, .CardWithTitle-list-layout-filter-quick-tag-item.active {
+          color: var(--azure-radiance); }
+          .CardWithTitle-list-layout-filter-quick-tag-item:hover svg path, .CardWithTitle-list-layout-filter-quick-tag-item.active svg path {
+            fill: var(--azure-radiance); }
+        .CardWithTitle-list-layout-filter-quick-tag-item-icon {
+          flex: 0 0 16px;
+          max-width: 16px;
+          margin-right: 4px; }
+          .CardWithTitle-list-layout-filter-quick-tag-item-icon svg path {
+            transition: 0.3s ease; }
   .CardWithTitle-news-list-item {
     border-radius: 5px;
     background: var(--alabaster);
@@ -1668,6 +1706,10 @@ ul {
     align-items: center;
     justify-content: center;
     position: relative; }
+    @media (max-width: 575px) {
+      .BookBlock-image {
+        flex: 0 0 auto;
+        width: auto; } }
     .BookBlock-image img {
       position: absolute;
       top: 0;
@@ -3232,6 +3274,9 @@ ul {
   width: 436px;
   border-radius: 5px;
   background: var(--white); }
+  @media (max-width: 991px) {
+    .AuthForm {
+      width: auto; } }
   .AuthForm-header-item {
     flex: 0 0 50%;
     max-width: 50%;
@@ -3243,6 +3288,9 @@ ul {
     padding: 5px;
     transition: 0.3s ease;
     border-bottom: 1px solid var(--alto); }
+    @media (max-width: 375px) {
+      .AuthForm-header-item {
+        padding: 5px 0; } }
     .AuthForm-header-item:hover {
       color: var(--azure-radiance); }
     .AuthForm-header-item.active {
@@ -3263,7 +3311,8 @@ ul {
     .AuthForm-header-item-platform {
       border-radius: 2px;
       border: 1px solid var(--alabaster);
-      width: 28px;
+      max-width: 28px;
+      flex: 0 0 28px;
       height: 28px;
       display: flex; }
       .AuthForm-header-item-platform:first-child {
@@ -3277,6 +3326,9 @@ ul {
     text-align: center;
     text-transform: uppercase;
     color: var(--mine-shaft); }
+    @media (max-width: 991px) {
+      .AuthForm-title {
+        font-size: 18px; } }
   .AuthForm-description {
     font-size: 14px;
     text-align: center;
@@ -3293,6 +3345,8 @@ ul {
     font-size: 14px;
     color: var(--mine-shaft);
     display: block; }
+    .AuthForm-label .AuthForm-link {
+      font-size: 14px; }
   .AuthForm-link {
     font-size: 12px;
     color: var(--red-alpha-75); }
@@ -3355,6 +3409,7 @@ ul {
       font-size: 14px;
       font-weight: 400;
       color: var(--emperor);
+      margin: 0 8px;
       width: 100%;
       transition: 0.3s ease;
       overflow: hidden;
@@ -3372,13 +3427,44 @@ ul {
         stroke: var(--azure-radiance); }
     .ProfileCard-sub-items-item:not(:last-child) {
       border-bottom: 1px solid var(--alto); }
-    .ProfileCard-sub-items-item-icon {
+    .ProfileCard-sub-items-item-arrow, .ProfileCard-sub-items-item-icon {
       flex: 0 0 16px;
       max-width: 16px;
-      height: 16px;
-      margin-right: 8px; }
-      .ProfileCard-sub-items-item-icon svg path {
+      height: 16px; }
+      .ProfileCard-sub-items-item-arrow svg path, .ProfileCard-sub-items-item-icon svg path {
         transition: 0.3s ease; }
+    .ProfileCard-sub-items-item-arrow svg {
+      transform: rotate(90deg); }
+
+.ProfileCardMobile {
+  padding: 0;
+  background: transparent; }
+  .ProfileCardMobile .ProfileCard-account {
+    border: none;
+    margin-bottom: 20px;
+    padding-bottom: 0; }
+    .ProfileCardMobile .ProfileCard-account-wrapper {
+      background: var(--white);
+      margin-bottom: 16px;
+      padding: 20px 28px; }
+  .ProfileCardMobile .ProfileCard-menu {
+    padding: 10px 28px;
+    background: var(--white); }
+  .ProfileCardMobile .ProfileInfomationPage-info {
+    margin: 0; }
+    .ProfileCardMobile .ProfileInfomationPage-info-item {
+      padding: 0;
+      width: 100%; }
+      .ProfileCardMobile .ProfileInfomationPage-info-item:nth-child(odd) .InfomationCard {
+        background: var(--azure-radiance); }
+        .ProfileCardMobile .ProfileInfomationPage-info-item:nth-child(odd) .InfomationCard-title, .ProfileCardMobile .ProfileInfomationPage-info-item:nth-child(odd) .InfomationCard-description {
+          color: var(--white); }
+      .ProfileCardMobile .ProfileInfomationPage-info-item:nth-child(even) .InfomationCard {
+        background: var(--shamrock); }
+        .ProfileCardMobile .ProfileInfomationPage-info-item:nth-child(even) .InfomationCard-title, .ProfileCardMobile .ProfileInfomationPage-info-item:nth-child(even) .InfomationCard-description {
+          color: var(--white); }
+      .ProfileCardMobile .ProfileInfomationPage-info-item:not(:last-child) {
+        margin-bottom: 15px; }
 
 .HomePage .HomeBanner:not(:last-child),
 .HomePage .BookCollection:not(:last-child),
@@ -3459,6 +3545,13 @@ ul {
   position: relative;
   min-height: 515px;
   padding: 35px 15px 50px; }
+  @media (max-width: 991px) {
+    .AuthPage {
+      min-height: auto;
+      padding: 0 0 15px 0; } }
+  @media (max-width: 991px) {
+    .AuthPage .Breadcrumb {
+      margin-bottom: 15px !important; } }
   .AuthPage-bg {
     position: absolute;
     top: 0;
@@ -3490,10 +3583,19 @@ ul {
 .ProfilePage .layout-col.right {
   max-width: calc(100% / 4 - 15px);
   flex: 0 0 calc(100% / 4 - 15px); }
+  @media (max-width: 991px) {
+    .ProfilePage .layout-col.left,
+    .ProfilePage .layout-col.right {
+      flex: 0 0 100%;
+      max-width: 100%; } }
 
 .ProfilePage .layout-col.main {
   flex: 0 0 calc(100% * 9 / 12 - 15px);
   max-width: calc(100% * 9 / 12 - 15px); }
+  @media (max-width: 991px) {
+    .ProfilePage .layout-col.main {
+      flex: 0 0 100%;
+      max-width: 100%; } }
 
 .ProfilePage .CardWithTitle-list-layout-filter-sort-select {
   padding-right: 0; }
@@ -3512,8 +3614,23 @@ ul {
     margin-right: 40px; }
   .ProfileInfomationPage-form.flex .ProfileInfomationPage-form-item:last-child {
     flex: 1; }
+  @media (max-width: 991px) {
+    .ProfileInfomationPage-form.flex .ProfileInfomationPage-form-item {
+      flex: 0 0 100% !important;
+      max-width: 100% !important;
+      margin-bottom: 30px; } }
   .ProfileInfomationPage-form-item-row {
     padding: 7.5px 0; }
+    @media (max-width: 991px) {
+      .ProfileInfomationPage-form-item-row.row-control {
+        flex-wrap: wrap; }
+        .ProfileInfomationPage-form-item-row.row-control .ProfileInfomationPage-form-item-row-item {
+          flex: 0 0 100% !important;
+          max-width: 100% !important; }
+          .ProfileInfomationPage-form-item-row.row-control .ProfileInfomationPage-form-item-row-item:first-child {
+            margin-bottom: 8px; }
+          .ProfileInfomationPage-form-item-row.row-control .ProfileInfomationPage-form-item-row-item .Button-control {
+            width: 100%; } }
     .ProfileInfomationPage-form-item-row-item:first-child {
       flex: 0 0 130px;
       max-width: 130px;

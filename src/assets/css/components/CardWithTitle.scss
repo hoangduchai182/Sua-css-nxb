@@ -275,6 +275,12 @@
         padding: 4px 8px 4px 15px;
         background: color(wild-sand);
 
+        @media (max-width: 991px) {
+          border: 1px solid color(silver);
+          border-radius: 3px;
+          padding: 4px 8px;
+        }
+
         &-icon {
           flex: 0 0 16px;
           max-width: 16px;
@@ -368,6 +374,56 @@
             margin-right: 4px;
 
             path {
+              transition: $common-transition;
+            }
+          }
+        }
+      }
+
+      &-quick-tag {
+        margin: 12px -16px 0;
+        padding: 12px 0;
+        border-bottom: 1px solid color(alto);
+        border-top: 1px solid color(alto);
+
+        &-item {
+          font-size: 12px;
+          font-weight: 500;
+          cursor: pointer;
+          transition: $common-transition;
+          color: color(emperor);
+          flex: 0 0 calc(100% / 4);
+          max-width: 0 0 calc(100% / 4);
+          position: relative;
+
+          &:not(:last-child) {
+            &::before {
+              position: absolute;
+              content: '';
+              top: 50%;
+              transform: translateY(-50%);
+              width: 1px;
+              height: 18px;
+              background: color(black-alpha-04);
+              right: 0;
+            }
+          }
+
+          &:hover,
+          &.active {
+            color: color(azure-radiance);
+
+            svg path {
+              fill: color(azure-radiance);
+            }
+          }
+
+          &-icon {
+            flex: 0 0 16px;
+            max-width: 16px;
+            margin-right: 4px;
+
+            svg path {
               transition: $common-transition;
             }
           }

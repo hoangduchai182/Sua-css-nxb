@@ -182,87 +182,119 @@
         </div>
       </div>
     </div>
-    <div class="AuthPage flex items-center justify-center">
-      <div class="AuthPage-bg"> <img src="./assets/images/bg-auth.png" alt=""></div>
-      <div class="AuthPage-body flex items-center justify-center">
-        <div class="AuthForm tab-wrapper">
-          <div class="AuthForm-header flex">
-            <div class="AuthForm-header-item flex items-center justify-center tab-item">Tài khoản được cấp</div>
-            <div class="AuthForm-header-item flex items-center justify-center tab-item">Email tổ chức
-              <div class="AuthForm-header-item-platform"><img src="./assets/icons/icon-google.svg" alt=""/></div>
-              <div class="AuthForm-header-item-platform"><img src="./assets/icons/icon-microsoft.svg" alt=""/></div>
+    <div class="ProfilePage layout">
+      <div class="container"> 
+        <div class="Breadcrumb flex flex-wrap"> 
+          <div class="Breadcrumb-item"><a href="#">Trang chủ</a></div>
+          <div class="Breadcrumb-item separator">/</div>
+          <div class="Breadcrumb-item"><a href="#">Thông tin tài khoản</a></div>
+          <div class="Breadcrumb-item separator">/</div>
+          <div class="Breadcrumb-item hightlight"><a href="#">Thay đổi thông tin tài khoản</a></div>
+        </div>
+        <div class="layout-wrapper flex"> 
+          <div class="layout-col main">
+            <div class="ProfileInfomationPage-wrapper"> 
+              <div class="CardWithTitle">
+                <div class="CardWithTitle-header flex items-center justify-between">
+                  <div class="CardWithTitle-header-title">THAY ĐỔI THÔNG TIN TÀI KHOẢN</div>
+                </div>
+                <div class="CardWithTitle-body"> 
+                  <div class="ProfileInfomationPage-form flex flex-wrap"> 
+                    <div class="ProfileInfomationPage-form-item">
+                      <div class="ProfileInfomationPage-avatar"> 
+                        <div class="Avatar   name  ">
+                          <div class="Avatar-name">T</div>
+                        </div>
+                      </div>
+                      <div class="ProfileInfomationPage-upload"> 
+                        <input type="file">
+                        <div class="Button   middle primary-transparent ">
+                          <button class="Button-control flex items-center justify-center" type="button">
+                            <div class="Button-control-icon"> <img src="./assets/icons/icon-camera-blue.svg" alt=""/></div>
+                            <div class="Button-control-title">Cập nhật ảnh đại diện
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="ProfileInfomationPage-upload-text">Dung lượng file tối đa 1 MB <br> Định dạng:.JPEG, .PNG</div>
+                    </div>
+                    <div class="ProfileInfomationPage-form-item">
+                      <div class="ProfileInfomationPage-form-item-row flex items-center row-control">
+                        <div class="ProfileInfomationPage-form-item-row-item">
+                          <div class="ProfileInfomationPage-form-item-label">Tên tài khoản</div>
+                        </div>
+                        <div class="ProfileInfomationPage-form-item-row-item">
+                          <div class="ProfileInfomationPage-form-item-control">
+                            <div class="Input  middle gray ">
+                              <input class="Input-control" type="text" placeholder="Nhập tên tài khoản"/>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ProfileInfomationPage-form-item-row flex items-center row-control">
+                        <div class="ProfileInfomationPage-form-item-row-item">
+                          <div class="ProfileInfomationPage-form-item-label">Địa chỉ email</div>
+                        </div>
+                        <div class="ProfileInfomationPage-form-item-row-item">
+                          <div class="ProfileInfomationPage-form-item-control">
+                            <div class="Input  middle gray ">
+                              <input class="Input-control" type="text" placeholder="Nhập email"/>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ProfileInfomationPage-form-item-row flex items-center"> 
+                        <div class="ProfileInfomationPage-form-item-row-item">
+                          <div class="ProfileInfomationPage-form-item-label">Trường</div>
+                        </div>
+                        <div class="ProfileInfomationPage-form-item-row-item">
+                          <div class="ProfileInfomationPage-form-item-label">Đại học Kinh tế Quốc Dân</div>
+                        </div>
+                      </div>
+                      <div class="ProfileInfomationPage-form-item-row flex items-center"> 
+                        <div class="ProfileInfomationPage-form-item-row-item">
+                          <div class="ProfileInfomationPage-form-item-label">Khoa</div>
+                        </div>
+                        <div class="ProfileInfomationPage-form-item-row-item">
+                          <div class="ProfileInfomationPage-form-item-label">Toán kinh tế</div>
+                        </div>
+                      </div>
+                      <div class="ProfileInfomationPage-form-item-row flex items-center"> 
+                        <div class="ProfileInfomationPage-form-item-row-item">
+                          <div class="ProfileInfomationPage-form-item-label">Lớp</div>
+                        </div>
+                        <div class="ProfileInfomationPage-form-item-row-item">
+                          <div class="ProfileInfomationPage-form-item-label">K63</div>
+                        </div>
+                      </div>
+                      <div class="ProfileInfomationPage-form-item-row flex items-center"> 
+                        <div class="ProfileInfomationPage-form-item-row-item">
+                          <div class="ProfileInfomationPage-form-item-label">Mã SV</div>
+                        </div>
+                        <div class="ProfileInfomationPage-form-item-row-item">
+                          <div class="ProfileInfomationPage-form-item-label">11210408</div>
+                        </div>
+                      </div>
+                      <div class="ProfileInfomationPage-form-item-row flex items-center row-control">
+                        <div class="ProfileInfomationPage-form-item-row-item">
+                          <div class="ProfileInfomationPage-form-item-label"> </div>
+                        </div>
+                        <div class="ProfileInfomationPage-form-item-row-item">
+                          <div class="ProfileInfomationPage-form-item-control">
+                            <div class="Button   small-middle primary ">
+                              <button class="Button-control flex items-center justify-center" type="button">
+                                <div class="Button-control-title">Cập nhật thông tin
+                                </div>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="AuthForm-body tab-main">
-            <div class="AuthForm-title">Đăng nhập</div>
-            <div class="AuthForm-description">Chào mừng bạn đến với thư viện VHMT Reader!</div>
-            <form class="AuthForm-form" action="#">
-              <div class="AuthForm-form-control">
-                <label class="AuthForm-label">Email tài khoản</label>
-                <div class="Input  small-middle gray ">
-                  <input class="Input-control" type="text" placeholder="Nhập địa chỉ email"/>
-                </div>
-              </div>
-              <div class="AuthForm-form-control">
-                <label class="AuthForm-label">Mật khẩu</label>
-                <div class="Input  small-middle gray ">
-                  <input class="Input-control" type="password" placeholder="Nhập địa chỉ email"/>
-                </div>
-              </div>
-              <div class="AuthForm-form-control flex items-center justify-between" style="padding: 0 8px">
-                <label class="Checkbox   gray">
-                  <div class="Checkbox-control flex items-start">
-                    <input class="Checkbox-input" type="checkbox"/>
-                    <div class="Checkbox-wrapper"><img src="./assets/icons/icon-check-white.svg" alt=""/></div>
-                    <div class="Checkbox-label">Ghi nhớ mật khẩu</div>
-                  </div>
-                </label><a class="AuthForm-link" href="#">Bạn quên mật khẩu?</a>
-              </div>
-              <div class="AuthForm-form-control">
-                <div class="Button   small-middle primary ">
-                  <button class="Button-control flex items-center justify-center" type="button">
-                    <div class="Button-control-title">Đăng nhập
-                    </div>
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="AuthForm-body tab-main">
-            <div class="AuthForm-title">Đăng nhập</div>
-            <div class="AuthForm-description">Chào mừng bạn đến với thư viện VHMT Reader!</div>
-            <div class="AuthForm-badge">Lưu ý -  Chỉ chấp nhận các email có tên miền: @neu.edu.vn; @microsoft.com; @gmail.com</div>
-            <form class="AuthForm-form" action="#">
-              <div class="AuthForm-form-control">
-                <label class="AuthForm-label">Email tổ chức</label>
-                <div class="Input  small-middle gray ">
-                  <input class="Input-control" type="text" placeholder="Nhập địa chỉ email"/>
-                </div>
-              </div>
-              <div class="AuthForm-form-control">
-                <label class="AuthForm-label">Mật khẩu</label>
-                <div class="Input  small-middle gray ">
-                  <input class="Input-control" type="password" placeholder="Nhập địa chỉ email"/>
-                </div>
-              </div>
-              <div class="AuthForm-form-control flex items-center justify-between" style="padding: 0 8px">
-                <label class="Checkbox   gray">
-                  <div class="Checkbox-control flex items-start">
-                    <input class="Checkbox-input" type="checkbox"/>
-                    <div class="Checkbox-wrapper"><img src="./assets/icons/icon-check-white.svg" alt=""/></div>
-                    <div class="Checkbox-label">Ghi nhớ mật khẩu</div>
-                  </div>
-                </label><a class="AuthForm-link" href="#">Bạn quên mật khẩu?</a>
-              </div>
-              <div class="AuthForm-form-control">
-                <div class="Button   small-middle primary ">
-                  <button class="Button-control flex items-center justify-center" type="button">
-                    <div class="Button-control-title">Đăng nhập
-                    </div>
-                  </button>
-                </div>
-              </div>
-            </form>
           </div>
         </div>
       </div>

@@ -69,6 +69,7 @@
         font-size: 14px;
         font-weight: 400;
         color: color(emperor);
+        margin: 0 8px;
         width: 100%;
         transition: $common-transition;
         @include ellipsis(1);
@@ -97,14 +98,20 @@
         border-bottom: 1px solid color(alto);
       }
 
+      &-arrow,
       &-icon {
         flex: 0 0 16px;
         max-width: 16px;
         height: 16px;
-        margin-right: 8px;
 
         svg path {
           transition: $common-transition;
+        }
+      }
+
+      &-arrow {
+        svg {
+          transform: rotate(90deg);
         }
       }
     }

@@ -1,0 +1,51 @@
+extends includes/layouts/Layout.pug
+
+block pages
+  .ProfilePage.layout
+    .container  
+      +Breadcrumb({ data: [
+        { link: '#', title: 'Trang chủ' },
+        { link: '#', title: 'Thay đổi mật khẩu' },
+      ] })
+      .layout-wrapper.flex 
+        .layout-col.main
+          .ProfileInfomationPage-wrapper 
+            .CardWithTitle
+              .CardWithTitle-header.flex.items-center.justify-between
+                .CardWithTitle-header-title THAY ĐỔI MẬT KHẨU
+
+              .CardWithTitle-body 
+                .ProfileInfomationPage-form
+                  .ProfileInfomationPage-form-item
+                    .ProfileInfomationPage-form-item-row.flex.items-center.row-control
+                      .ProfileInfomationPage-form-item-row-item
+                        .ProfileInfomationPage-form-item-label Mật khẩu(*)
+
+                      .ProfileInfomationPage-form-item-row-item
+                        .ProfileInfomationPage-form-item-control
+                          +Input({ placeholder: 'Nhập mật khẩu cũ', styleType: 'gray', type: 'password', showHidePassword: true })
+
+                    .ProfileInfomationPage-form-item-row.flex.items-center.row-control
+                      .ProfileInfomationPage-form-item-row-item
+                        .ProfileInfomationPage-form-item-label Mật khẩu mới(*)
+
+                      .ProfileInfomationPage-form-item-row-item
+                        .ProfileInfomationPage-form-item-control
+                          +Input({ placeholder: 'Nhập mật khẩu mới', styleType: 'gray', type: 'password', showHidePassword: true })
+
+                    .ProfileInfomationPage-form-item-row.flex.items-center.row-control
+                      .ProfileInfomationPage-form-item-row-item
+                        .ProfileInfomationPage-form-item-label Nhập lại mật khẩu(*)
+
+                      .ProfileInfomationPage-form-item-row-item
+                        .ProfileInfomationPage-form-item-control
+                          +Input({ placeholder: 'Nhập lại mật khẩu mới', styleType: 'gray', type: 'password', showHidePassword: true })
+
+                    .ProfileInfomationPage-form-item-row.flex.items-center.row-control
+                      .ProfileInfomationPage-form-item-row-item
+                        .ProfileInfomationPage-form-item-label 
+
+                      .ProfileInfomationPage-form-item-row-item
+                        .ProfileInfomationPage-form-item-control
+                          +Button({ size: 'small-middle', title: 'Cập nhật' })
+

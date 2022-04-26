@@ -1,0 +1,60 @@
+.ProfileCardMobile {
+  padding: 0;
+  background: transparent;
+
+  .ProfileCard {
+    &-account {
+      border: none;
+      margin-bottom: 20px;
+      padding-bottom: 0;
+
+      &-wrapper {
+        background: color(white);
+        margin-bottom: 16px;
+        padding: 20px 28px;
+      }
+    }
+
+    &-menu {
+      padding: 10px 28px;
+      background: color(white);
+    }
+  }
+
+  .ProfileInfomationPage {
+    &-info {
+      margin: 0;
+
+      &-item {
+        padding: 0;
+        width: 100%;
+
+        &:nth-child(odd) {
+          .InfomationCard {
+            background: color(azure-radiance);
+
+            &-title,
+            &-description {
+              color: color(white);
+            }
+          }
+        }
+
+        &:nth-child(even) {
+          .InfomationCard {
+            background: color(shamrock);
+
+            &-title,
+            &-description {
+              color: color(white);
+            }
+          }
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}

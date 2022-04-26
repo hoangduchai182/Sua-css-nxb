@@ -46,6 +46,11 @@
     justify-content: center;
     position: relative;
 
+    @media (max-width: 575px) {
+      flex: 0 0 auto;
+      width: auto;
+    }
+
     img {
       @include centerImage;
     }

@@ -4,11 +4,21 @@
   .layout-col.right {
     max-width: calc(100% / 4 - 15px);
     flex: 0 0 calc(100% / 4 - 15px);
+
+    @media (max-width: 991px) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
   }
 
   .layout-col.main {
     flex: 0 0 calc(100% * 9 / 12 - 15px);
     max-width: calc(100% * 9 / 12 - 15px);
+
+    @media (max-width: 991px) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
   }
 
   .CardWithTitle-list-layout-filter-sort-select {
