@@ -29,8 +29,50 @@
   }
 
   .CardWithTitle {
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
     &-list-layout-filter-sort-select {
       padding-right: 0;
+    }
+  }
+
+  .ProfileInfomationPage {
+    &-info {
+      margin: 0;
+      padding: 8px 16px;
+
+      &-item {
+        padding: 0;
+        width: 100%;
+
+        &:nth-child(odd) {
+          .InfomationCard {
+            background: color(azure-radiance);
+
+            &-title,
+            &-description {
+              color: color(white);
+            }
+          }
+        }
+
+        &:nth-child(even) {
+          .InfomationCard {
+            background: color(shamrock);
+
+            &-title,
+            &-description {
+              color: color(white);
+            }
+          }
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 15px;
+        }
+      }
     }
   }
 }

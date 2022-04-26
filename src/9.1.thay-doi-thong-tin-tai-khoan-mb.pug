@@ -6,7 +6,6 @@ block pages
       +Breadcrumb({ data: [
         { link: '#', title: 'Trang chủ' },
         { link: '#', title: 'Thông tin tài khoản' },
-        { link: '#', title: 'Thay đổi thông tin tài khoản' },
       ] })
 
       .layout-wrapper.flex 
@@ -14,7 +13,18 @@ block pages
           .ProfileInfomationPage-wrapper 
             .CardWithTitle
               .CardWithTitle-header.flex.items-center.justify-between
-                .CardWithTitle-header-title THAY ĐỔI THÔNG TIN TÀI KHOẢN
+                .CardWithTitle-header-title THÔNG TIN THÀNH VIÊN
+
+              .CardWithTitle-body 
+                .ProfileInfomationPage-info
+                  each item in dataInformationCardMobile
+                    .ProfileInfomationPage-info-item
+                      +InfomationCard(item)
+
+
+            .CardWithTitle
+              .CardWithTitle-header.flex.items-center.justify-between
+                .CardWithTitle-header-title THÔNG TIN TÀI KHOẢN
 
               .CardWithTitle-body 
                 .ProfileInfomationPage-form.flex.flex-wrap 

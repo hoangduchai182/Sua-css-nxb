@@ -3006,19 +3006,6 @@ ul {
       display: flex;
       padding: 16px;
       position: relative; }
-      .BookDetailSection-preview-carousel-item img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        max-width: 100%;
-        max-height: 100%;
-        margin: auto;
-        width: unset !important;
-        object-fit: contain;
-        object-position: center;
-        border-radius: 5px; }
     .BookDetailSection-preview-carousel .owl-dots {
       position: absolute;
       bottom: -35px;
@@ -3443,7 +3430,6 @@ ul {
   background: transparent; }
   .ProfileCardMobile .ProfileCard-account {
     border: none;
-    margin-bottom: 20px;
     padding-bottom: 0; }
     .ProfileCardMobile .ProfileCard-account-wrapper {
       background: var(--white);
@@ -3452,21 +3438,6 @@ ul {
   .ProfileCardMobile .ProfileCard-menu {
     padding: 10px 28px;
     background: var(--white); }
-  .ProfileCardMobile .ProfileInfomationPage-info {
-    margin: 0; }
-    .ProfileCardMobile .ProfileInfomationPage-info-item {
-      padding: 0;
-      width: 100%; }
-      .ProfileCardMobile .ProfileInfomationPage-info-item:nth-child(odd) .InfomationCard {
-        background: var(--azure-radiance); }
-        .ProfileCardMobile .ProfileInfomationPage-info-item:nth-child(odd) .InfomationCard-title, .ProfileCardMobile .ProfileInfomationPage-info-item:nth-child(odd) .InfomationCard-description {
-          color: var(--white); }
-      .ProfileCardMobile .ProfileInfomationPage-info-item:nth-child(even) .InfomationCard {
-        background: var(--shamrock); }
-        .ProfileCardMobile .ProfileInfomationPage-info-item:nth-child(even) .InfomationCard-title, .ProfileCardMobile .ProfileInfomationPage-info-item:nth-child(even) .InfomationCard-description {
-          color: var(--white); }
-      .ProfileCardMobile .ProfileInfomationPage-info-item:not(:last-child) {
-        margin-bottom: 15px; }
 
 .HomePage .HomeBanner:not(:last-child),
 .HomePage .BookCollection:not(:last-child),
@@ -3604,8 +3575,28 @@ ul {
     padding-left: 30px;
     padding-right: 30px; } }
 
+.ProfilePage .CardWithTitle:not(:last-child) {
+  margin-bottom: 16px; }
+
 .ProfilePage .CardWithTitle-list-layout-filter-sort-select {
   padding-right: 0; }
+
+.ProfilePage .ProfileInfomationPage-info {
+  margin: 0;
+  padding: 8px 16px; }
+  .ProfilePage .ProfileInfomationPage-info-item {
+    padding: 0;
+    width: 100%; }
+    .ProfilePage .ProfileInfomationPage-info-item:nth-child(odd) .InfomationCard {
+      background: var(--azure-radiance); }
+      .ProfilePage .ProfileInfomationPage-info-item:nth-child(odd) .InfomationCard-title, .ProfilePage .ProfileInfomationPage-info-item:nth-child(odd) .InfomationCard-description {
+        color: var(--white); }
+    .ProfilePage .ProfileInfomationPage-info-item:nth-child(even) .InfomationCard {
+      background: var(--shamrock); }
+      .ProfilePage .ProfileInfomationPage-info-item:nth-child(even) .InfomationCard-title, .ProfilePage .ProfileInfomationPage-info-item:nth-child(even) .InfomationCard-description {
+        color: var(--white); }
+    .ProfilePage .ProfileInfomationPage-info-item:not(:last-child) {
+      margin-bottom: 15px; }
 
 .ProfileInfomationPage-info {
   margin: 0 -15px 24px; }
@@ -3683,3 +3674,35 @@ ul {
     font-size: 13px;
     text-align: center;
     color: var(--gray); }
+
+.PageNotFound {
+  text-align: center;
+  padding: 15px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
+  .PageNotFound h1 {
+    text-transform: uppercase;
+    color: var(--azure-radiance);
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 8px; }
+    @media (max-width: 991px) {
+      .PageNotFound h1 {
+        font-size: 20px; } }
+  .PageNotFound p {
+    font-size: 20px;
+    color: var(--gray); }
+    @media (max-width: 991px) {
+      .PageNotFound p {
+        font-size: 14px; } }
+  .PageNotFound img {
+    display: block;
+    margin-top: 16px;
+    max-width: 1140px;
+    width: 100%; }
+    @media (max-width: 1440px) {
+      .PageNotFound img {
+        max-width: 1024px; } }

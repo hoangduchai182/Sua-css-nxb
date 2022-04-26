@@ -271,9 +271,9 @@
         padding: 16px;
         position: relative;
 
-        img {
-          @include centerImage;
-        }
+        // img {
+        //   @include centerImage;
+        // }
       }
 
       .owl-dots {
