@@ -71,6 +71,10 @@
 
           .Input {
             max-width: 360px;
+
+            @media (max-width: 991px) {
+              max-width: 100%;
+            }
           }
         }
       }

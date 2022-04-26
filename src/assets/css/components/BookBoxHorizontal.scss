@@ -12,6 +12,8 @@
 
     img {
       @include centerImage;
+      height: calc(100% - 32px);
+      width: calc(100% - 32px);
     }
   }
 
@@ -19,7 +21,6 @@
     .BookBoxHorizontal {
       &-image {
         box-shadow: 0px 15px 35px rgba(50, 50, 93, 0.1), 0px 5px 15px rgba(0, 0, 0, 0.07);
-        ;
       }
 
       &-info {

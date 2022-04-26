@@ -21,7 +21,16 @@
     }
   }
 
-  .CardWithTitle-list-layout-filter-sort-select {
-    padding-right: 0;
+  .layout-col.main .CardWithTitle {
+    @media (max-width: 991px) {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+
+  .CardWithTitle {
+    &-list-layout-filter-sort-select {
+      padding-right: 0;
+    }
   }
 }

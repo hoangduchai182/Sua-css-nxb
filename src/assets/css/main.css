@@ -2360,7 +2360,9 @@ ul {
     width: unset !important;
     object-fit: contain;
     object-position: center;
-    border-radius: 5px; }
+    border-radius: 5px;
+    height: calc(100% - 32px);
+    width: calc(100% - 32px); }
 
 .BookBoxHorizontal:hover .BookBoxHorizontal-image {
   box-shadow: 0px 15px 35px rgba(50, 50, 93, 0.1), 0px 5px 15px rgba(0, 0, 0, 0.07); }
@@ -3597,6 +3599,11 @@ ul {
       flex: 0 0 100%;
       max-width: 100%; } }
 
+@media (max-width: 991px) {
+  .ProfilePage .layout-col.main .CardWithTitle {
+    padding-left: 30px;
+    padding-right: 30px; } }
+
 .ProfilePage .CardWithTitle-list-layout-filter-sort-select {
   padding-right: 0; }
 
@@ -3639,6 +3646,9 @@ ul {
       flex: 1; }
     .ProfileInfomationPage-form-item-row-item .Input {
       max-width: 360px; }
+      @media (max-width: 991px) {
+        .ProfileInfomationPage-form-item-row-item .Input {
+          max-width: 100%; } }
   .ProfileInfomationPage-form-item-label {
     font-size: 14px;
     color: var(--mine-shaft); }
