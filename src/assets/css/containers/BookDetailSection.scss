@@ -270,10 +270,27 @@
         display: flex;
         padding: 16px;
         position: relative;
+        height: 421px;
 
-        // img {
-        //   @include centerImage;
-        // }
+        @media (max-width: 1230px) {
+          height: 36.8vw;
+        }
+
+        @media (max-width: 991px) {
+          height: unset;
+        }
+
+        img {
+          @include centerImage;
+          width: calc(100% - 32px) !important;
+          height: calc(100% - 32px) !important;
+
+          @media (max-width: 991px) {
+            width: unset !important;
+            height: unset !important;
+            position: unset;
+          }
+        }
       }
 
       .owl-dots {
