@@ -7,7 +7,7 @@
 //- }
 
 mixin CardBookView({ className = '', image, title, description, rating })
-  .CardBookView.flex.items-center(class=`${className}`)
+  a.CardBookView.flex.items-center(href="#" class=`${className}`)
     .CardBookView-image 
       img(src=`${image}`, alt="")
 

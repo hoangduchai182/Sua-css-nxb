@@ -10,11 +10,11 @@
       }
 
       &-info {
-
         &-title {
           font-size: 16px;
           font-weight: 700;
-          color: color(mine-shaft)
+          color: color(mine-shaft);
+          @include ellipsis(2);
         }
 
         &-title,
@@ -22,6 +22,9 @@
           margin-bottom: 8px;
         }
 
+        &-description {
+          @include ellipsis(4);
+        }
       }
     }
   }
@@ -91,6 +94,7 @@
 
     img {
       width: 100%;
+      border-radius: 5px;
     }
 
     &-video {

@@ -15,10 +15,11 @@
       cursor: pointer;
       position: relative;
       transition: $common-transition;
-      padding: 20px 12px;
 
       &>a {
         font-size: 13px;
+        display: block;
+        padding: 20px 12px;
         color: color(white);
       }
 

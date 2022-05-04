@@ -72,10 +72,12 @@
     border: 1px solid color(mercury);
     padding: 16px;
     margin-bottom: 15px;
+    width: 100%;
 
     @media (max-width: 991px) {
       border: none;
       margin: 0 -16px 15px;
+      width: calc(100% + 32px);
       background: color(alabaster);
     }
 

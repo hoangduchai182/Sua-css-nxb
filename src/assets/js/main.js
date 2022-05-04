@@ -141,6 +141,12 @@ const owlCarousel = {
               mouseDrag: true,
               touchDrag: true,
             },
+            768: {
+              items: 3,
+              slideBy: 1,
+              mouseDrag: true,
+              touchDrag: true,
+            },
             991: {
               items: 4,
               slideBy: 1,
@@ -305,7 +311,6 @@ const header = {
 
     if (headerAccount && headerDropdown) {
       headerAccount?.addEventListener?.("click", (e) => {
-        e.preventDefault();
         headerDropdown.classList.toggle("active");
       });
       const listener = (event) => {
@@ -370,7 +375,6 @@ const navigation = {
 
       if (caretIcon) {
         item?.addEventListener?.("click", (e) => {
-          e.preventDefault();
           item.classList.toggle("active");
           subItems.classList.toggle("active");
         });
@@ -396,9 +400,8 @@ const navigation = {
 
       if (caretIcon) {
         item?.addEventListener?.("click", (e) => {
-          e.preventDefault();
-          item.classList.toggle("active");
           subItems.classList.toggle("active");
+          item.classList.toggle("active");
         });
       }
     });
@@ -580,7 +583,7 @@ const showHidePassword = {
 
       btnShowHide.addEventListener("click", () => {
         btnShowHide.classList.toggle("active");
-        input.type = input.type === 'password' ? 'text' : 'password'
+        input.type = input.type === "password" ? "text" : "password";
       });
     });
   },

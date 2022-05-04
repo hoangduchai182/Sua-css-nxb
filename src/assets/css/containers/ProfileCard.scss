@@ -65,7 +65,7 @@
       transition: $common-transition;
       background: color(white);
 
-      a {
+      span {
         font-size: 14px;
         font-weight: 400;
         color: color(emperor);
@@ -79,8 +79,17 @@
       &:hover {
         border-color: color(azure-radiance) !important;
 
-        a {
+        span {
           color: color(azure-radiance);
+        }
+
+        .document {
+          .stroke {
+            stroke: color(azure-radiance);
+          }
+          .fill {
+            fill: color(azure-radiance);
+          }
         }
 
         svg {
