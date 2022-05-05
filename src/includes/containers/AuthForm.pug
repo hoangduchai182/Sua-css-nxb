@@ -50,16 +50,6 @@ mixin AuthForm(type)
 
         form(action="#").AuthForm-form
           .AuthForm-form-control
-            label.AuthForm-label Email tổ chức
-            +Input({ size: 'small-middle', styleType: 'gray', placeholder: 'Nhập địa chỉ email' })
+            +Button({ title: 'Đăng nhập với Microsoft', styleType: 'primary', iconImage: './assets/icons/icon-microsoft-circle.svg' })
           .AuthForm-form-control
-            label.AuthForm-label Mật khẩu
-            +Input({ size: 'small-middle', styleType: 'gray', placeholder: 'Nhập địa chỉ email', type: 'password' })
-
-          .AuthForm-form-control.flex.items-center.justify-between(style="padding: 0 8px")
-            +Checkbox({ label: 'Ghi nhớ mật khẩu', styleType: 'gray' })
-            a(href="#").AuthForm-link Bạn quên mật khẩu?
-
-          .AuthForm-form-control
-            +Button({ size: 'small-middle', title: 'Đăng nhập', styleType: 'primary' })
-
+            +Button({ title: 'Đăng nhập với Google', styleType: 'red', iconImage: './assets/icons/icon-google-circle.svg' })

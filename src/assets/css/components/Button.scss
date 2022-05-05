@@ -166,6 +166,29 @@
     }
   }
 
+  &.red {
+    .Button {
+      &-control {
+        background: color(red);
+        border-color: color(red);
+
+        &:hover {
+          background: color(vermilion);
+          border-color: color(vermilion);
+        }
+
+        &:active {
+          background: color(red);
+          border-color: color(red);
+        }
+
+        &-title {
+          color: color(white);
+        }
+      }
+    }
+  }
+
   &.orange {
     .Button {
       &-control {

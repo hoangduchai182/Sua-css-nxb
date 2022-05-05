@@ -1185,6 +1185,18 @@ ul {
   .Button.yellow .Button-control-title {
     color: var(--white); }
 
+.Button.red .Button-control {
+  background: var(--red);
+  border-color: var(--red); }
+  .Button.red .Button-control:hover {
+    background: var(--vermilion);
+    border-color: var(--vermilion); }
+  .Button.red .Button-control:active {
+    background: var(--red);
+    border-color: var(--red); }
+  .Button.red .Button-control-title {
+    color: var(--white); }
+
 .Button.orange .Button-control {
   background: var(--orange-peel);
   border-color: var(--orange-peel); }
