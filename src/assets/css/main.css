@@ -2607,6 +2607,9 @@ ul {
 
 .HomeBanner-wrapper-item:first-child {
   margin-bottom: 16px; }
+  @media (min-width: 992px) {
+    .HomeBanner-wrapper-item:first-child .owl-stage {
+      margin-left: -1px; } }
   @media (max-width: 991px) {
     .HomeBanner-wrapper-item:first-child .HomeBanner-item {
       border-radius: 0; } }
