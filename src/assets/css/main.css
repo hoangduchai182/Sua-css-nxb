@@ -2522,7 +2522,8 @@ ul {
 .SeeMore {
   position: relative;
   max-height: 230px;
-  overflow: hidden; }
+  overflow: hidden;
+  padding: 0 4px; }
   .SeeMore.active {
     max-height: unset !important; }
     .SeeMore.active .SeeMore-btn {

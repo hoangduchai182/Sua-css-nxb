@@ -2,6 +2,7 @@
   position: relative;
   max-height: 230px;
   overflow: hidden;
+  padding: 0 4px;
 
   &.active {
     max-height: unset !important;
