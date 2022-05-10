@@ -17,8 +17,15 @@
     }
 
     &-image {
+      display: flex;
+      height: 525px;
+
       img {
         width: 100%;
+        height: 100%;
+        margin: auto;
+        object-fit: cover;
+        object-position: center;
       }
     }
 
@@ -29,6 +36,12 @@
       width: 100%;
       padding: 16px 30px;
       background: color(jaguar-alpha-75);
+
+      &-content {
+        font-size: 14px;
+        color: color(white);
+        @include ellipsis(3);
+      }
 
       &-title,
       &-description {

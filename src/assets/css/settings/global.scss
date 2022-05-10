@@ -214,3 +214,9 @@ ul {
     }
   }
 }
+
+.owl-stage {
+  @media (min-width: 992px) {
+    margin-left: -1px;
+  }
+}
