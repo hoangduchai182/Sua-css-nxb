@@ -6,7 +6,7 @@
     margin-right: 16px;
     padding: 16px;
     display: flex;
-    border: 1px solid color(alto);
+    // border: 1px solid color(alto);
     transition: $common-transition;
     position: relative;
 
@@ -63,6 +63,22 @@
 
         &:first-child {
           white-space: nowrap;
+        }
+      }
+    }
+
+    &-btns {
+      margin: 15px 0 -15px;
+
+      &-item {
+        flex: 0 0 calc(50% - 7.5px);
+        max-width: calc(50% - 7.5px);
+        margin-bottom: 15px;
+
+        .Button {
+          &-control {
+            width: 100%;
+          }
         }
       }
     }

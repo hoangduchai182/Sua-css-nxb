@@ -6,7 +6,7 @@
 //-   seeAll: boolean,
 //- }
 
-mixin BookBlock({ className = '', image, title, layout = 'vertical', link = '#' })
+mixin BookBlock({ className = '', image, title, layout = 'vertical', link = '#', showAction })
   .BookBlock(class=`${className} ${layout}`)
     .BookBlock-image 
       a(href=`${link}`)
@@ -14,3 +14,10 @@ mixin BookBlock({ className = '', image, title, layout = 'vertical', link = '#' 
 
     .BookBlock-title
       a(href=`${link}`)= title
+
+    if showAction 
+      .BookBlock-btns
+        .BookBlock-btns-item
+          +Button({ title: 'Đọc sách', size: 'small', styleType: 'primary-transparent special', iconSvg: 'eye' })
+        .BookBlock-btns-item
+          +Button({ title: 'Xoá khỏi tủ sách', size: 'small', styleType: 'gray-transparent', iconSvg: 'eye' })

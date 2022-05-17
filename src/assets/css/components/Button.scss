@@ -9,10 +9,16 @@
 
     &-title {
       white-space: nowrap;
+      transition: $common-transition;
     }
 
     &-icon {
       display: flex;
+
+      .stroke,
+      .fill {
+        transition: $common-transition;
+      }
 
       img,
       svg {
@@ -80,6 +86,53 @@
     }
   }
 
+  &.primary-transparent.special {
+    .Button {
+      &-control {
+        background: color(azure-radiance-alpha-01);
+        border-color: color(azure-radiance-alpha-01);
+
+        &:hover {
+          background: color(azure-radiance);
+
+          .Button-control {
+            &-icon {
+              .stroke {
+                stroke: color(white);
+              }
+
+              .fill {
+                fill: color(white);
+              }
+            }
+
+            &-title {
+              color: color(white);
+            }
+          }
+        }
+
+        &:active {
+          background: color(azure-radiance);
+        }
+
+        &-icon {
+          .stroke {
+            stroke: color(azure-radiance);
+          }
+
+          .fill {
+            fill: color(azure-radiance);
+          }
+        }
+
+        &-title {
+          color: color(azure-radiance);
+        }
+      }
+    }
+  }
+
   &.primary-transparent {
     .Button {
       &-control {
@@ -106,10 +159,6 @@
       &-control {
         background: color(white);
         border-color: color(azure-radiance);
-
-        &:hover {
-          background: color(wild-sand);
-        }
 
         &:active {
           background: color(science-blue-alpha-01);
@@ -253,6 +302,39 @@
 
         &-title {
           color: color(shamrock);
+        }
+      }
+    }
+  }
+
+  &.gray-transparent {
+    .Button {
+      &-control {
+        background: color(alabaster);
+        border-color: color(alto);
+
+        &:hover {
+          background: color(wild-sand);
+          border-color: color(alto);
+        }
+
+        &:active {
+          background: color(alabaster);
+          border-color: color(alto);
+        }
+
+        &-icon {
+          .stroke {
+            stroke: color(gray);
+          }
+
+          .fill {
+            fill: color(gray);
+          }
+        }
+
+        &-title {
+          color: color(gray);
         }
       }
     }

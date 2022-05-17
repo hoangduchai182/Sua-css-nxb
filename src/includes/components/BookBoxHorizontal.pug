@@ -10,3 +10,9 @@ mixin BookBoxHorizontal({ image, description, dataTable })
           tr 
             td= item.key 
             td= item.value
+
+      .BookBoxHorizontal-info-btns.flex.justify-between 
+        .BookBoxHorizontal-info-btns-item
+          +Button({ title: 'Đọc sách', styleType: 'primary-transparent special', iconSvg: 'eye' })
+        .BookBoxHorizontal-info-btns-item
+          +Button({ title: 'Xoá khỏi tủ sách', styleType: 'gray-transparent', iconSvg: 'eye' })

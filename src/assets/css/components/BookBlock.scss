@@ -66,4 +66,20 @@
       min-height: 52px;
     }
   }
+
+  &-btns {
+    margin-top: 12px;
+
+    &-item {
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+
+      .Button {
+        &-control {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
