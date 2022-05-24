@@ -38,39 +38,42 @@
     }
   }
 
-  .ProfileInfomationPage {
-    &-info {
-      margin: 0;
-      padding: 8px 16px;
 
-      &-item {
-        padding: 0;
-        width: 100%;
+  @media (max-width: 991px) {
+    .ProfileInfomationPage {
+      &-info {
+        margin: 0;
+        padding: 8px 16px;
 
-        &:nth-child(odd) {
-          .InfomationCard {
-            background: color(azure-radiance);
+        &-item {
+          padding: 0;
+          width: 100%;
 
-            &-title,
-            &-description {
-              color: color(white);
+          &:nth-child(odd) {
+            .InfomationCard {
+              background: color(azure-radiance);
+
+              &-title,
+              &-description {
+                color: color(white);
+              }
             }
           }
-        }
 
-        &:nth-child(even) {
-          .InfomationCard {
-            background: color(shamrock);
+          &:nth-child(even) {
+            .InfomationCard {
+              background: color(shamrock);
 
-            &-title,
-            &-description {
-              color: color(white);
+              &-title,
+              &-description {
+                color: color(white);
+              }
             }
           }
-        }
 
-        &:not(:last-child) {
-          margin-bottom: 15px;
+          &:not(:last-child) {
+            margin-bottom: 15px;
+          }
         }
       }
     }

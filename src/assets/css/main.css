@@ -3725,22 +3725,23 @@ ul {
 .ProfilePage .CardWithTitle-list-layout-filter-sort-select {
   padding-right: 0; }
 
-.ProfilePage .ProfileInfomationPage-info {
-  margin: 0;
-  padding: 8px 16px; }
-  .ProfilePage .ProfileInfomationPage-info-item {
-    padding: 0;
-    width: 100%; }
-    .ProfilePage .ProfileInfomationPage-info-item:nth-child(odd) .InfomationCard {
-      background: var(--azure-radiance); }
-      .ProfilePage .ProfileInfomationPage-info-item:nth-child(odd) .InfomationCard-title, .ProfilePage .ProfileInfomationPage-info-item:nth-child(odd) .InfomationCard-description {
-        color: var(--white); }
-    .ProfilePage .ProfileInfomationPage-info-item:nth-child(even) .InfomationCard {
-      background: var(--shamrock); }
-      .ProfilePage .ProfileInfomationPage-info-item:nth-child(even) .InfomationCard-title, .ProfilePage .ProfileInfomationPage-info-item:nth-child(even) .InfomationCard-description {
-        color: var(--white); }
-    .ProfilePage .ProfileInfomationPage-info-item:not(:last-child) {
-      margin-bottom: 15px; }
+@media (max-width: 991px) {
+  .ProfilePage .ProfileInfomationPage-info {
+    margin: 0;
+    padding: 8px 16px; }
+    .ProfilePage .ProfileInfomationPage-info-item {
+      padding: 0;
+      width: 100%; }
+      .ProfilePage .ProfileInfomationPage-info-item:nth-child(odd) .InfomationCard {
+        background: var(--azure-radiance); }
+        .ProfilePage .ProfileInfomationPage-info-item:nth-child(odd) .InfomationCard-title, .ProfilePage .ProfileInfomationPage-info-item:nth-child(odd) .InfomationCard-description {
+          color: var(--white); }
+      .ProfilePage .ProfileInfomationPage-info-item:nth-child(even) .InfomationCard {
+        background: var(--shamrock); }
+        .ProfilePage .ProfileInfomationPage-info-item:nth-child(even) .InfomationCard-title, .ProfilePage .ProfileInfomationPage-info-item:nth-child(even) .InfomationCard-description {
+          color: var(--white); }
+      .ProfilePage .ProfileInfomationPage-info-item:not(:last-child) {
+        margin-bottom: 15px; } }
 
 .ProfileInfomationPage-info {
   margin: 0 -15px 24px; }
