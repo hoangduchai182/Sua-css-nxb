@@ -514,10 +514,6 @@ ul {
         flex: 0 0 100%;
         max-width: 100%; } }
 
-@media (min-width: 992px) {
-  .owl-stage {
-    margin-left: -1px; } }
-
 .Header {
   padding: 5.25px 0; }
   .Header .container {
@@ -2659,6 +2655,10 @@ ul {
     max-width: 16px;
     margin-right: 8px; }
 
+@media (min-width: 992px) {
+  .HomeBanner .owl-stage {
+    margin-left: -1px; } }
+
 .HomeBanner-item {
   border-radius: 5px;
   overflow: hidden; }
@@ -3231,6 +3231,9 @@ ul {
 .PostCarousel {
   position: relative;
   margin: 30px 0; }
+  @media (min-width: 992px) {
+    .PostCarousel .owl-stage {
+      margin-left: -1px; } }
   @media (max-width: 991px) {
     .PostCarousel {
       margin: 16px 0; } }
@@ -3261,11 +3264,15 @@ ul {
       .PostCarousel-item-info-content {
         font-size: 14px;
         color: var(--white);
+        max-width: 85%;
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical; }
+        @media (max-width: 991px) {
+          .PostCarousel-item-info-content {
+            max-width: 100%; } }
       .PostCarousel-item-info-title, .PostCarousel-item-info-description {
         color: var(--white);
         font-size: 14px;
@@ -3288,7 +3295,7 @@ ul {
       .PostCarousel .owl-prev,
       .PostCarousel .owl-next {
         right: 16px;
-        bottom: calc(100% + 37px); } }
+        bottom: calc(100% + 24px); } }
     .PostCarousel .owl-prev img,
     .PostCarousel .owl-next img {
       width: 100%; }
@@ -3296,7 +3303,10 @@ ul {
     right: calc(30px + 12px + 28px); }
     @media (max-width: 991px) {
       .PostCarousel .owl-prev {
-        right: calc(16px + 12px + 28px); } }
+        right: calc(12px + 28px); } }
+  @media (max-width: 991px) {
+    .PostCarousel .owl-next {
+      right: 0; } }
 
 .PostDetail {
   padding: 30px;

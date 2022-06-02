@@ -1,4 +1,10 @@
 .HomeBanner {
+  .owl-stage {
+    @media (min-width: 992px) {
+      margin-left: -1px;
+    }
+  }
+
   &-item {
     border-radius: 5px;
     overflow: hidden;
