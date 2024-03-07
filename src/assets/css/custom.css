@@ -1,0 +1,825 @@
+:root {
+  --black: #000;
+  --black-alpha-04: rgba(0, 0, 0, 0.4);
+  --black-alpha-03: rgba(0, 0, 0, 0.3);
+  --white: #ffffff;
+  --white-alpha-03: rgba(255, 255, 255, 0.3);
+  --white-alpha-02: rgba(255, 255, 255, 0.2);
+  --mid-gray: #67676e;
+  --mid-gray-alpha-05: #67676e80;
+  --alto: #e0e0e0;
+  --alto-alpha-03: rgba(224, 224, 224, 0.3);
+  --vermilion: #ff3d00;
+  --emperor: #4f4f4f;
+  --red: #e70000;
+  --red-alpha-75: rgba(231, 0, 0, 0.75);
+  --azure-radiance: #097be4;
+  --azure-radiance-alpha-01: rgba(9, 123, 228, 0.1);
+  --azure-radiance-alpha-75: rgba(9, 123, 228, 0.75);
+  --science-blue: #0065ca;
+  --science-blue-alpha-01: rgba(0, 101, 202, 0.1);
+  --science-blue-alpha-03: rgba(0, 101, 202, 0.3);
+  --mine-shaft: #333333;
+  --mine-shaft-alpha-05: rgba(51, 51, 51, 0.5);
+  --yellow-orange: #ffbd3c;
+  --cream-can: #f2c94c;
+  --gray: #828282;
+  --alabaster: #f8f8f8;
+  --silver: #b9b9b9;
+  --manatee: #91909a;
+  --mercury: #e6e6e6;
+  --pale-sky: #6c757d;
+  --gallery: #efefef;
+  --orange-peel: #f39f00;
+  --orange-peel-alpha-35: rgba(243, 159, 0, 0.35);
+  --orange-peel-alpha-15: rgba(243, 159, 0, 0.15);
+  --tangerine: #e29502;
+  --forest-green: #27ae34;
+  --forest-green-alpha-01: rgb(39, 174, 52, 0.1);
+  --forest-green-alpha-03: rgb(39, 174, 52, 0.3);
+  --forest-green-alpha-75: rgb(39, 174, 52, 0.75);
+  --mountain-meadow: #13b871;
+  --shamrock: #2dce89;
+  --chateau-green: rgb(57, 181, 74);
+  --chateau-green-alpha-01: rgba(57, 181, 74, 0.1);
+  --chateau-green-alpha-03: rgba(57, 181, 74, 0.3);
+  --cod-gray: #161616;
+  --cod-gray-alpha-05: rgba(22, 22, 22, 0.5);
+  --ghost: #ced4da;
+  --shark: #212529;
+  --concrete: #f2f2f2;
+  --wild-sand: #f4f4f4;
+  --jaguar: #02010e;
+  --jaguar-alpha-75: rgba(2, 1, 14, 0.75);
+}
+.layout {
+  background-color: #d4e9d3;
+}
+.Header-hotline-item-info-label,
+.Header-hotline-item-info-value {
+  color: var(--forest-green);
+}
+
+.select2-container--default
+  .select2-results__option--highlighted.select2-results__option--selectable {
+  background-color: #27ae34;
+  color: #fff;
+}
+.CardBookView:hover {
+  background: rgb(39, 174, 52, 0.1);
+}
+.CardBookView:hover .CardBookView-info-rating svg path {
+  fill: var(--forest-green-alpha-03);
+}
+.select2-container--classic .select2-selection--single:focus {
+  border: 1px solid #27ae34;
+}
+.select2-container--classic.select2-container--open .select2-selection--single {
+  border: 1px solid #27ae34;
+}
+.select2-container--classic .select2-selection--multiple:focus {
+  border: 1px solid #27ae34;
+}
+.select2-container--classic.select2-container--open
+  .select2-selection--multiple {
+  border: 1px solid #27ae34;
+}
+.select2-container--classic
+  .select2-results__option--highlighted.select2-results__option--selectable {
+  background-color: #3875d7;
+  color: #fff;
+}
+.Header-btns .Button.primary .Button-control {
+  background: linear-gradient(#ff5c00, #fd8f40) !important;
+  border: none;
+  border-radius: 5px;
+}
+.Header-btns .Button.primary .Button-control:hover {
+  background: linear-gradient(#ff5c00, #fd8f40);
+}
+.select2-container--classic.select2-container--open .select2-dropdown {
+  border-color: #27ae34;
+}
+
+.Header-sub-items-item:hover {
+  border-color: var(--forest-green) !important;
+}
+.Header-sub-items-item:hover span {
+  color: var(--forest-green);
+}
+.Header-sub-items-item:hover .document .stroke {
+  stroke: var(--forest-green);
+}
+.Header-sub-items-item:hover .document .fill {
+  fill: var(--forest-green);
+}
+.Header-sub-items-item:hover svg.fill path {
+  fill: var(--forest-green);
+}
+.Header-sub-items-item:hover svg.stroke path {
+  stroke: var(--forest-green);
+}
+
+.Footer-bottom {
+  background: var(--chateau-green);
+}
+
+.Navigation {
+  background: var(--forest-green);
+}
+@media (max-width: 991px) {
+  .Navigation {
+    padding: 8px 0;
+    background: var(--chateau-green);
+  }
+}
+
+.Navigation-list-item:hover {
+  background: var(--chateau-green);
+}
+.Navigation-list-item.active {
+  background: var(--chateau-green);
+}
+
+.Navigation-sub-items-item:hover {
+  border-color: var(--forest-green) !important;
+}
+.Navigation-sub-items-item:hover a {
+  color: var(--forest-green);
+}
+.Navigation-sub-items-item:hover svg path {
+  fill: var(--forest-green);
+}
+
+.NavigationMobile-title::before {
+  background: var(--forest-green);
+}
+
+.NavigationMobile-list-item.active > a,
+.NavigationMobile-list-item:hover > a {
+  color: var(--forest-green);
+}
+.NavigationMobile-list-item.active .NavigationMobile-list-item-caret svg path,
+.NavigationMobile-list-item:hover .NavigationMobile-list-item-caret svg path {
+  stroke: var(--forest-green);
+}
+.NavigationMobile-list-item.active .NavigationMobile-list-item-icon svg path,
+.NavigationMobile-list-item:hover .NavigationMobile-list-item-icon svg path {
+  fill: var(--forest-green);
+}
+
+.NavigationMobile-sub-items-item:hover a {
+  color: var(--forest-green);
+}
+.NavigationMobile-sub-items-item:hover
+  .NavigationMobile-sub-items-item-icon
+  .document
+  .stroke {
+  stroke: var(--forest-green);
+}
+.NavigationMobile-sub-items-item:hover
+  .NavigationMobile-sub-items-item-icon
+  .document
+  .fill {
+  fill: var(--forest-green);
+}
+.AuthForm-form .Input.green .Input-control {
+  border-color: var(--alto);
+  background-color: var(--chateau-green-alpha-03);
+  border-radius: 4px;
+}
+.Button-badge.red {
+  background: var(--red);
+  color: var(--white);
+}
+.Button-badge.blue {
+  background: var(--chateau-green);
+  color: var(--white);
+}
+.Button-badge.yellow {
+  background: var(--orange-peel);
+  color: var(--white);
+}
+.Button.reverse .Button-control {
+  flex-direction: row-reverse;
+}
+.Button.primary .Button-control {
+  background: var(--forest-green);
+  border-color: var(--forest-green);
+}
+.Button.primary .Button-control:hover {
+  background: var(--chateau-green);
+  border-color: var(--chateau-green);
+}
+.AuthForm-body:nth-child(3) .Button.primary .Button-control {
+  background: var(--azure-radiance);
+  border-color: var(--azure-radiance);
+}
+.AuthForm-body:nth-child(3) .Button.primary .Button-control:hover {
+  background: var(--science-blue);
+  border-color: var(--science-blue);
+}
+
+/* .Button.primary .Button-control:active {
+  background: var(--forest-green);
+  border-color: var(--forest-green);
+} */
+.Button.primary .Button-control-title {
+  color: var(--white);
+}
+.search-desktop .Button-control .Button-control-title {
+  text-decoration: underline;
+}
+.Button.primary-transparent.special .Button-control {
+  background: var(--forest-green-alpha-01);
+  border-color: var(--forest-green-alpha-01);
+}
+.Button.primary-transparent.special .Button-control:hover {
+  background: var(--forest-green);
+}
+.Button.primary-transparent.special
+  .Button-control:hover
+  .Button-control-icon
+  .stroke {
+  stroke: var(--white);
+}
+.Button.primary-transparent.special
+  .Button-control:hover
+  .Button-control-icon
+  .fill {
+  fill: var(--white);
+}
+.Button.primary-transparent.special
+  .Button-control:hover
+  .Button-control-title {
+  color: var(--white);
+}
+.Button.primary-transparent.special .Button-control:active {
+  background: var(--forest-green);
+}
+.Button.primary-transparent.special .Button-control-icon .stroke {
+  stroke: var(--forest-green);
+}
+.Button.primary-transparent.special .Button-control-icon .fill {
+  fill: var(--forest-green);
+}
+.Button.primary-transparent.special .Button-control-title {
+  color: var(--forest-green);
+}
+/* .Button.primary-transparent .Button-control {
+  background: var(--forest-green-alpha-01);
+  border-color: var(--forest-green-alpha-01);
+} 
+.Button.primary-transparent .Button-control-title {
+  color: var(--forest-green);
+} */
+.Button.primary-transparent .Button-control:hover {
+  background: var(--wild-sand);
+}
+.Button.primary-transparent .Button-control:active {
+  background: var(--chateau-green-alpha-01);
+}
+
+.Button.outline-primary .Button-control {
+  background: var(--white);
+  border-color: var(--forest-green);
+}
+.Button.outline-primary .Button-control:active {
+  background: var(--chateau-green-alpha-01);
+}
+.Button.outline-primary .Button-control-title {
+  color: var(--forest-green);
+}
+.Button.outline-white .Button-control {
+  background: 0 0;
+  border-color: var(--white);
+}
+.Button.outline-white .Button-control:hover {
+  background: var(--chateau-green-alpha-03);
+}
+.Button.outline-white .Button-control:active {
+  background: var(--chateau-green);
+}
+.Button.outline-white .Button-control-title {
+  color: var(--white);
+}
+.Button.yellow .Button-control {
+  background: var(--yellow-orange);
+  border-color: var(--yellow-orange);
+}
+.Button.yellow .Button-control:hover {
+  background: var(--tangerine);
+  border-color: var(--tangerine);
+}
+.Button.yellow .Button-control:active {
+  background: var(--yellow-orange);
+  border-color: var(--yellow-orange);
+}
+.Button.yellow .Button-control-title {
+  color: var(--white);
+}
+.Button.red .Button-control {
+  background: var(--red);
+  border-color: var(--red);
+}
+.Button.red .Button-control:hover {
+  background: var(--vermilion);
+  border-color: var(--vermilion);
+}
+.Button.red .Button-control:active {
+  background: var(--red);
+  border-color: var(--red);
+}
+.Button.red .Button-control-title {
+  color: var(--white);
+}
+.Button.orange .Button-control {
+  background: var(--orange-peel);
+  border-color: var(--orange-peel);
+}
+.Button.orange .Button-control:hover {
+  background: var(--tangerine);
+  border-color: var(--tangerine);
+}
+.Button.orange .Button-control:active {
+  background: var(--orange-peel);
+  border-color: var(--orange-peel);
+}
+.Button.orange .Button-control-title {
+  color: var(--white);
+}
+.Button.green .Button-control {
+  background: var(--shamrock);
+  border-color: var(--shamrock);
+}
+.Button.green .Button-control:hover {
+  background: var(--mountain-meadow);
+  border-color: var(--mountain-meadow);
+}
+.Button.green .Button-control:active {
+  background: var(--shamrock);
+  border-color: var(--shamrock);
+}
+.Button.green .Button-control-title {
+  color: var(--white);
+}
+.Button.outline-green .Button-control {
+  background: var(--white);
+  border-color: var(--forest-green);
+}
+.Button.outline-green .Button-control:hover {
+  border-color: var(--chateau-green);
+  background: var(--wild-sand);
+}
+.Button.outline-green .Button-control:active {
+  border-color: var(--chateau-green);
+  background: var(--chateau-green-alpha-03);
+}
+.Button.outline-green .Button-control-title {
+  color: var(--forest-green);
+}
+
+.CardWithTitle-header-title::before {
+  background: var(--forest-green);
+}
+
+.CardWithTitle-header-see-all:hover {
+  color: var(--forest-green);
+}
+.CardWithTitle-header-see-all:hover svg path {
+  fill: var(--forest-green);
+}
+
+.CardWithTitle-header-layout-btn:hover {
+  background: var(--forest-green);
+  border-color: var(--forest-green);
+}
+.CardWithTitle-header-layout-btn:hover svg path,
+.CardWithTitle-header-layout-btn:hover svg rect {
+  fill: var(--white);
+  stroke: var(--white);
+}
+.CardWithTitle-header-layout-btn.active,
+.CardWithTitle-header-layout-btn:active {
+  background: var(--white);
+  border-color: var(--forest-green);
+}
+.CardWithTitle-header-layout-btn.active svg path,
+.CardWithTitle-header-layout-btn.active svg rect,
+.CardWithTitle-header-layout-btn:active svg path,
+.CardWithTitle-header-layout-btn:active svg rect {
+  fill: var(--forest-green);
+  stroke: var(--forest-green);
+}
+
+.CardWithTitle-list-layout-filter-search button {
+  color: var(--forest-green);
+}
+
+.CardWithTitle-list-layout-filter-sort-btn:hover {
+  color: var(--forest-green);
+}
+.CardWithTitle-list-layout-filter-sort-btn:hover svg path {
+  fill: var(--forest-green);
+}
+
+.CardWithTitle-list-layout-filter-quick-tag-item.active,
+.CardWithTitle-list-layout-filter-quick-tag-item:hover {
+  color: var(--forest-green);
+}
+.CardWithTitle-list-layout-filter-quick-tag-item.active svg path,
+.CardWithTitle-list-layout-filter-quick-tag-item:hover svg path {
+  fill: var(--forest-green);
+}
+
+.PostBlock-info-title:hover {
+  color: var(--forest-green) !important;
+}
+
+.BookCollection.blue {
+  background: linear-gradient(
+    45deg,
+    var(--forest-green-alpha-75),
+    var(--forest-green)
+  );
+}
+
+.FolderTree-group-item.active
+  > .FolderTree-group-item-label
+  .FolderTree-item-label,
+.FolderTree-group-item:hover
+  > .FolderTree-group-item-label
+  .FolderTree-item-label {
+  color: var(--forest-green);
+}
+.FolderTree-group-item.active
+  > .FolderTree-group-item-label
+  .FolderTree-item-label-icon
+  svg
+  path,
+.FolderTree-group-item:hover
+  > .FolderTree-group-item-label
+  .FolderTree-item-label-icon
+  svg
+  path {
+  fill: var(--forest-green);
+}
+.FolderTree-group-item.active
+  > .FolderTree-group-item-label
+  .FolderTree-group-item-arrow
+  svg
+  path,
+.FolderTree-group-item:hover
+  > .FolderTree-group-item-label
+  .FolderTree-group-item-arrow
+  svg
+  path {
+  stroke: var(--forest-green);
+}
+
+.FolderTree-subItems-item:hover .FolderTree-subItems-item-icon svg path {
+  stroke: var(--forest-green);
+}
+.FolderTree-subItems-item:hover .FolderTree-item-label {
+  color: var(--forest-green);
+}
+
+/* .FolderTree-see-more {
+  color: var(--forest-green);
+} */
+
+.Breadcrumb-item.hightlight,
+.Breadcrumb-item:hover {
+  color: var(--azure-radiance);
+}
+.Breadcrumb-item.hightlight a,
+.Breadcrumb-item:hover a {
+  color: var(--azure-radiance);
+}
+
+.FilterTags-item:hover .FilterTags-item-label {
+  border-color: var(--forest-green);
+}
+.FilterTags-item-input:checked + .FilterTags-item-label {
+  border-color: var(--forest-green);
+  background: var(--forest-green);
+  color: var(--white);
+}
+.Pagination-item:not(.btn).active a,
+.Pagination-item:not(.btn):active a {
+  background: var(--orange-peel);
+  color: var(--white);
+}
+.Pagination-item:not(.btn).active:hover a,
+.Pagination-item:not(.btn):active:hover a {
+  background: var(--orange-peel);
+  color: var(--white);
+}
+.Pagination-item:not(.btn):hover a {
+  background: var(--chateau-green-alpha-01);
+  border-color: var(--chateau-green-alpha-03);
+}
+.Pagination-item.btn:active a {
+  background: var(--forest-green);
+  border-color: var(--forest-green);
+}
+.CategoryBlock {
+  background: var(--forest-green);
+}
+
+.Avatar.border-blue {
+  border: 1px solid var(--forest-green);
+}
+
+.Avatar.name {
+  background: var(--forest-green);
+}
+
+.ProfileInfomationPage-avatar .Avatar.name {
+  background: var(--azure-radiance);
+}
+
+.Avatar-badge.red {
+  background: var(--red);
+  color: var(--white);
+}
+.Avatar-badge.blue {
+  background: var(--chateau-green);
+  color: var(--white);
+}
+.Avatar-badge.yellow {
+  background: var(--orange-peel);
+  color: var(--white);
+}
+.CardWithTab-header-item:hover {
+  color: var(--forest-green) !important;
+}
+.CardWithTab-header-item::before {
+  background: var(--forest-green);
+}
+.CardWithTitle-list-layout-item
+  .CardWithTitle-books-horizontal-list-item
+  .BookBoxHorizontal:hover
+  .BookBoxHorizontal-info-description {
+  color: var(--azure-radiance);
+}
+.BookBoxHorizontal:hover .BookBoxHorizontal-info-description {
+  color: var(--forest-green);
+}
+.Checkbox-input:checked + .Checkbox-wrapper {
+  background: var(--forest-green);
+  border-color: var(--forest-green);
+}
+.SeeMore-btn.gray {
+  color: var(--mid-gray-alpha-05);
+}
+.SearchAdvanced .Input.small-middle .Input-control {
+  color: var(--forest-green);
+}
+.BookDetailSection-table td a {
+  text-decoration: underline;
+  color: var(--forest-green);
+}
+.BookDetailSection-preview-list-item.active,
+.BookDetailSection-preview-list-item:hover {
+  border-color: var(--forest-green);
+}
+.BookDetailSection-preview-carousel .owl-dots .owl-dot.active {
+  background: var(--forest-green);
+}
+.PostCategories-item {
+  background: var(--orange-peel);
+}
+.ReturnResultSearch-item {
+  color: var(--forest-green);
+}
+.AuthForm-header-item:hover {
+  color: var(--forest-green);
+}
+.AuthForm-header-item.active {
+  color: var(--forest-green);
+}
+.AuthForm-header-item::before {
+  background: var(--forest-green);
+}
+
+.ProfileCard-sub-items-item.active,
+.ProfileCard-sub-items-item:hover {
+  border-color: var(--forest-green) !important;
+}
+.ProfileCard-sub-items-item.active span,
+.ProfileCard-sub-items-item:hover span {
+  color: var(--forest-green);
+}
+.ProfileCard-sub-items-item.active .document .stroke,
+.ProfileCard-sub-items-item:hover .document .stroke {
+  stroke: var(--forest-green);
+}
+.ProfileCard-sub-items-item.active .document .fill,
+.ProfileCard-sub-items-item:hover .document .fill {
+  fill: var(--forest-green);
+}
+.ProfileCard-sub-items-item.active svg.fill path,
+.ProfileCard-sub-items-item:hover svg.fill path {
+  fill: var(--forest-green);
+}
+.ProfileCard-sub-items-item.active svg.stroke path,
+.ProfileCard-sub-items-item:hover svg.stroke path {
+  stroke: var(--forest-green);
+}
+@media (max-width: 991px) {
+  .ProfilePage .ProfileInfomationPage-info-item:nth-child(odd) .InfomationCard {
+    background: var(--forest-green);
+  }
+  .ProfilePage
+    .ProfileInfomationPage-info-item:nth-child(even)
+    .InfomationCard {
+    background: var(--shamrock);
+  }
+}
+.PageNotFound h1 {
+  color: var(--forest-green);
+}
+.Footer-bottom {
+  background: var(--forest-green);
+}
+
+.Button.small.gray-transparent {
+  display: none;
+}
+.BookBlock-image {
+  border: 1px solid #e5eaee;
+  border-radius: 5px;
+}
+.BookBlock-image a img {
+  height: 100%;
+}
+.ReturnResultSearch {
+  background-color: #e2eee4;
+  border-color: rgb(39, 174, 52, 0.5);
+}
+.BookDetailSection-actions .Button.outline-primary .Button-control {
+  background: var(--white);
+  border-color: var(--orange-peel);
+}
+.BookDetailSection-actions
+  .Button.outline-primary
+  .Button-control
+  .Button-control-title,
+.BookDetailSection-table td a {
+  color: var(--orange-peel);
+}
+.BookDetailSection-actions .Button.green .Button-control {
+  background: var(--orange-peel);
+  border-color: var(--orange-peel);
+}
+.BookDetailSection-actions .Button.green .Button-control:hover {
+  background: #cf8700;
+}
+
+.BookDetailSection-actions.full-size .Button.green .Button-control {
+  background: var(--shamrock);
+  border-color: var(--shamrock);
+}
+
+.BookDetailSection-actions.full-size .Button.green .Button-control:hover {
+  background: var(--shamrock);
+  border-color: var(--shamrock);
+}
+.PostCategories-item::before {
+  display: none;
+}
+.BookCollection.blue {
+  background: linear-gradient(#fbe3d5, #ffe0c2, #ffe0bb);
+}
+.BookCollection-header-item {
+  color: var(--black);
+}
+.BookCollection-main-info-title,
+.BookCollection-main-info-description,
+.BookCollection-main-info-subtitle {
+  color: var(--black);
+  white-space: normal;
+}
+.BookCollection-main-image {
+  flex: 0 0 217px;
+}
+.BookCollection.blue .BookCollection-header-item-btn {
+  background-color: var(--white-alpha-03);
+}
+.BookCollection-header {
+  border-bottom: 2px solid var(--white-alpha-03);
+}
+@media (max-width: 991px) {
+  .Header-logo.nxb,
+  .Header-logo:not(:last-child)::before {
+    display: inherit;
+  }
+}
+.Header-hotline-item-icon img,
+.Header-btns .Button.primary .Button-control-icon img,
+.Header-btns .Button.primary .Button-control-title,
+.Header-btns .Button.outline-primary .Button-control-icon img,
+.Header-wrapper-item.mobile
+  .Button.outline-primary.only-icon
+  .Button-control-icon
+  img,
+.BookDetailSection-preview-carousel-wrapper
+  .BookDetailSection-actions
+  .outline-primary
+  .Button-control-icon
+  img,
+.BookDetailSection-actions.full
+  .Button.green
+  .Button-control
+  .Button-control-icon
+  img,
+.BookDetailSection-actions.full
+  .Button.green
+  .Button-control
+  .Button-control-title {
+  display: none;
+}
+.Header-hotline-item-icon::before {
+  content: '';
+  background-image: url('../icons/icon-phone-green.svg');
+  background-size: contain;
+  height: 24px;
+  width: 24px;
+  display: inline-block;
+}
+.Header-btns .Button.primary .Button-control-icon::before {
+  content: '';
+  background-image: url('../icons/icon-heart.svg');
+  background-size: contain;
+  height: 16px;
+  width: 16px;
+  display: inline-block;
+}
+
+.Header-btns .Button.primary .Button-control::after {
+  content: 'Tủ sách';
+  display: inline-block;
+  font-size: 13px;
+  color: white;
+}
+.Header-btns .Button.outline-primary .Button-control-icon::before {
+  content: '';
+  background-image: url('../icons/icon-user-circle-green.svg');
+  background-size: contain;
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+}
+.Header-wrapper-item.mobile
+  .Button.outline-primary.only-icon
+  .Button-control-icon:first-child {
+  content: '';
+  background-image: url('../icons/icon-user-circle-fill-green.svg');
+  background-size: contain;
+  height: 26px;
+  width: 26px;
+  display: inline-block;
+}
+.Header-wrapper-item.mobile
+  .Button.NavigationMobile-open.outline-primary.only-icon
+  .Button-control-icon:first-child {
+  content: '';
+  background-image: url('../icons/icon-bars-green.svg');
+  background-size: contain;
+  height: 26px;
+  width: 26px;
+  display: inline-block;
+}
+.BookDetailSection-preview-carousel-wrapper
+  .BookDetailSection-actions
+  .outline-primary
+  .Button-control-icon::before {
+  content: '';
+  background-image: url('../icons/icon-headphone-orange.svg');
+  background-size: contain;
+  height: 14px;
+  width: 15px;
+  display: inline-block;
+}
+.BookDetailSection-actions.full
+  .Button.green
+  .Button-control
+  .Button-control-icon::before {
+  content: '';
+  background-image: url('../icons/icon-heart.svg');
+  background-size: contain;
+  height: 16px;
+  width: 16px;
+  display: inline-block;
+  margin-right: 8px;
+}
+.BookDetailSection-actions.full
+  .Button.green
+  .Button-control
+  .Button-control-icon::after {
+  content: 'Tủ sách';
+  display: inline-block;
+  font-size: 13px;
+  color: white;
+}
